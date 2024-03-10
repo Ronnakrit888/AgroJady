@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://coe2tgc7sfe3x"]
+
+[ext_resource type="Texture2D" uid="uid://mj5vmma10a7x" path="res://UI/Tiny Wonder UI/buttons.png" id="1_eeo4q"]
+[ext_resource type="Script" path="res://UI/inventory_gui.gd" id="1_qk17d"]
+[ext_resource type="PackedScene" uid="uid://cd5y5uoteir7i" path="res://UI/slot_inv.tscn" id="2_8rdhe"]
+
+[node name="InventoryGUI" type="Control"]
+custom_minimum_size = Vector2(477, 305)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 477.0
+offset_bottom = 305.0
+script = ExtResource("1_qk17d")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 476.0
+offset_bottom = 303.0
+texture = ExtResource("1_eeo4q")
+region_rect = Rect2(3, 2, 42, 28)
+
+[node name="InventoryContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -49.0
+offset_right = 83.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="SlotInv" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv2" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv3" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv4" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv5" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv6" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv7" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv8" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv9" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv10" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv11" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv12" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv13" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv14" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2
+
+[node name="SlotInv15" parent="NinePatchRect/InventoryContainer" instance=ExtResource("2_8rdhe")]
+layout_mode = 2

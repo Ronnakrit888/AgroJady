@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://durv868p8to1y"]
+
+[ext_resource type="PackedScene" uid="uid://cljr6vwgxjt66" path="res://objects_items/Collectables/collectable.tscn" id="1_giyba"]
+[ext_resource type="Texture2D" uid="uid://bthnb03w3v6to" path="res://objects_items/Resources/resources13.png" id="2_h715i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7epqm"]
+resource_local_to_scene = true
+radius = 7.0
+
+[node name="wood" instance=ExtResource("1_giyba")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_h715i")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_7epqm")

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="HarvestingTool" load_steps=5 format=3 uid="uid://embx0yto7qnt"]
+
+[ext_resource type="Texture2D" uid="uid://cetqy7mxdvqwd" path="res://objects_items/items/base_axe.png" id="1_m82u0"]
+[ext_resource type="Resource" uid="uid://csw5cbb0ba5hh" path="res://objects_items/Resources/ResourceType/cutable.tres" id="1_qvgb1"]
+[ext_resource type="Script" path="res://objects_items/scripts/HarvestingTool.gd" id="2_6uoc1"]
+[ext_resource type="Texture2D" uid="uid://i3qu0g8r0yg2" path="res://player/tools/tool_axe.png" id="4_u7yrg"]
+
+[resource]
+script = ExtResource("2_6uoc1")
+effected_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("1_qvgb1")])
+min_amount = 1
+max_amount = 1
+type = "Tool"
+display_name = "Basic axe"
+icon = ExtResource("1_m82u0")
+texture = ExtResource("4_u7yrg")
+maxAmountPrStack = 1
+rarity = "Common"
+description = ""

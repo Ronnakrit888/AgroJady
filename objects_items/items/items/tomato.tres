@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://di34d2hkw6op1"]
+
+[ext_resource type="Texture2D" uid="uid://c2vhj7xrkee5y" path="res://SpriteSheets/items.png" id="1_w5844"]
+[ext_resource type="Script" path="res://objects_items/scripts/Item.gd" id="2_jbomc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt3he"]
+atlas = ExtResource("1_w5844")
+region = Rect2(96, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_jbomc")
+display_name = "Tomato"
+icon = SubResource("AtlasTexture_wt3he")
+maxAmountPrStack = 5
+value = 6
+rarity = "Common"
+description = ""

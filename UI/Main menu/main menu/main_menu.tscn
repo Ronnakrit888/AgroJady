@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxeafkdyt17ln"]
+
+[ext_resource type="Script" path="res://UI/Main menu/main menu/main_menu.gd" id="1_rs6yk"]
+[ext_resource type="Texture2D" uid="uid://gdk20d7krk8h" path="res://UI/Main menu/main menu/bg/istockphoto-1355161536-612x612.jpg" id="1_sr2kf"]
+[ext_resource type="Texture2D" uid="uid://xytbxhr08cv2" path="res://UI/Main menu/main menu/bt.png" id="2_c1vau"]
+[ext_resource type="PackedScene" uid="uid://b1djk55hukcnf" path="res://UI/Main menu/settings menu/settings_menu.tscn" id="4_dbqw1"]
+[ext_resource type="AudioStream" uid="uid://8bc5sqwo4ncl" path="res://UI/Main menu/main menu/music/04-BGM-Ranch.ogg" id="5_i1fyj"]
+
+[sub_resource type="SystemFont" id="SystemFont_mlmba"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_o4xjb"]
+font_names = PackedStringArray("Impact")
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rs6yk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sr2kf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -54.0
+offset_right = -2.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_mlmba")
+theme_override_font_sizes/font_size = 64
+text = "AGROJAYDY FARM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+position = Vector2(60, 258)
+scale = Vector2(3.29375, 1.68136)
+texture = ExtResource("2_c1vau")
+
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_o4xjb")
+theme_override_font_sizes/font_size = 24
+text = "Start Game
+"
+flat = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+position = Vector2(60, 329)
+scale = Vector2(3.29375, 1.68136)
+texture = ExtResource("2_c1vau")
+
+[node name="Settings_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_o4xjb")
+theme_override_font_sizes/font_size = 24
+text = "Settings
+"
+flat = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+position = Vector2(60, 400)
+scale = Vector2(3.29375, 1.68136)
+texture = ExtResource("2_c1vau")
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_o4xjb")
+theme_override_font_sizes/font_size = 24
+text = "Exit game
+"
+flat = true
+
+[node name="Settings_Menu" parent="." instance=ExtResource("4_dbqw1")]
+visible = false
+layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i1fyj")
+volume_db = -4.205
+autoplay = true

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cljr6vwgxjt66"]
+
+[ext_resource type="Script" path="res://objects_items/Collectables/collectable.gd" id="1_6htjp"]
+[ext_resource type="Resource" uid="uid://gkq30yxivmlc" path="res://objects_items/items/items/wood.tres" id="2_hod0m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k6u7c"]
+resource_local_to_scene = true
+radius = 7.0
+
+[node name="Collectables" type="Area2D"]
+z_index = 1
+script = ExtResource("1_6htjp")
+itemRes = ExtResource("2_hod0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+region_rect = Rect2(32, 496, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k6u7c")

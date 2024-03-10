@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dd3tdpjg8onda"]
+
+[ext_resource type="Texture2D" uid="uid://c2vhj7xrkee5y" path="res://SpriteSheets/items.png" id="1_h448j"]
+[ext_resource type="Script" path="res://objects_items/scripts/Item.gd" id="2_pi1to"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt3he"]
+atlas = ExtResource("1_h448j")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_pi1to")
+display_name = "Carbage"
+icon = SubResource("AtlasTexture_wt3he")
+maxAmountPrStack = 15
+value = 10
+rarity = "Common"
+description = ""

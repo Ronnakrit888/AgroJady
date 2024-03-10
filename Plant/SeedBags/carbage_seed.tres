@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemPlant" load_steps=4 format=3 uid="uid://cqbr1yuren45j"]
+
+[ext_resource type="Texture2D" uid="uid://c2vhj7xrkee5y" path="res://SpriteSheets/items.png" id="1_vexwm"]
+[ext_resource type="Script" path="res://Plant/SeedItem.gd" id="2_ov445"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw5tk"]
+atlas = ExtResource("1_vexwm")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_ov445")
+amount = 5
+type = "Spring"
+display_name = "Carbage Seed"
+icon = SubResource("AtlasTexture_vw5tk")
+maxAmountPrStack = 999
+value = 0
+rarity = "Common"
+description = ""

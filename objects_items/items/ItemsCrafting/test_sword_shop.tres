@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ShopItemData" load_steps=2 format=3 uid="uid://c35babxny6axj"]
+
+[ext_resource type="Script" path="res://objects_items/items/shopItems/ShopItemData.gd" id="2_spwmu"]
+
+[resource]
+script = ExtResource("2_spwmu")
+value = 150

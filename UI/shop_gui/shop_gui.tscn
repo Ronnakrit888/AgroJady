@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://pa7g1th4x476"]
+
+[ext_resource type="Script" path="res://UI/shop_gui/script/ShopGui.gd" id="1_lp8xy"]
+[ext_resource type="Texture2D" uid="uid://cm7hk3k8gkdat" path="res://UI/Cutted/GUI_02.png" id="2_4r378"]
+[ext_resource type="PackedScene" uid="uid://bc2sa8b2yg5le" path="res://UI/shop_gui/panel_shop_item.tscn" id="3_rety1"]
+[ext_resource type="Resource" uid="uid://bmogd7lvjnpn3" path="res://objects_items/items/ItemsCrafting/test_axe_shop.tres" id="4_duoeb"]
+[ext_resource type="Resource" uid="uid://bjc55oakj8m6r" path="res://objects_items/items/ItemsCrafting/test_pickaxe_shop.tres" id="5_iqsni"]
+[ext_resource type="Resource" uid="uid://c35babxny6axj" path="res://objects_items/items/ItemsCrafting/test_sword_shop.tres" id="6_1ft0k"]
+
+[node name="toolShopGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_lp8xy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(351, 198)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -99.0
+offset_right = 175.5
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4r378")
+region_rect = Rect2(0, 0, 48, 32)
+patch_margin_left = 5
+patch_margin_top = 4
+patch_margin_right = 5
+patch_margin_bottom = 4
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -27.5
+offset_right = 65.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+columns = 5
+
+[node name="PanelShopItem" parent="NinePatchRect/GridContainer" instance=ExtResource("3_rety1")]
+layout_mode = 2
+item = ExtResource("4_duoeb")
+
+[node name="PanelShopItem2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_rety1")]
+layout_mode = 2
+item = ExtResource("5_iqsni")
+
+[node name="PanelShopItem3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_rety1")]
+layout_mode = 2
+item = ExtResource("6_1ft0k")
+
+[node name="PanelShopItem4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_rety1")]
+layout_mode = 2
+
+[node name="PanelShopItem5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_rety1")]
+layout_mode = 2

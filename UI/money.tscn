@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuc055won2lqe"]
+
+[ext_resource type="Texture2D" uid="uid://bsvinnxk1evds" path="res://SpriteSheets/sprite sheets/items.png" id="1_climt"]
+[ext_resource type="Script" path="res://scripts/money.gd" id="1_toyh6"]
+[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="2_xc2r7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6rar"]
+atlas = ExtResource("1_climt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ak6c3"]
+font = ExtResource("2_xc2r7")
+font_color = Color(1, 0.666667, 0.113725, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Money" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1095.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_toyh6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_n6rar")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ak6c3")

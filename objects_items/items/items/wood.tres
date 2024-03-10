@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://gkq30yxivmlc"]
+
+[ext_resource type="Texture2D" uid="uid://bthnb03w3v6to" path="res://objects_items/Resources/resources13.png" id="1_6rg5d"]
+[ext_resource type="Script" path="res://objects_items/scripts/Item.gd" id="2_b00yv"]
+
+[resource]
+script = ExtResource("2_b00yv")
+display_name = "Wood"
+icon = ExtResource("1_6rg5d")
+maxAmountPrStack = 15
+value = 0
+rarity = "Common"
+description = ""

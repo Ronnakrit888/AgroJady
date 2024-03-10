@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://caan2kcye1e7q"]
+
+[ext_resource type="Texture2D" uid="uid://bsl127h21if3t" path="res://Tiny Wonder Farm/spr_tileset_sunnysideworld_16px.png" id="1_q28h2"]
+[ext_resource type="Script" path="res://growingzone.gd" id="1_ruos6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipr1d"]
+atlas = ExtResource("1_q28h2")
+region = Rect2(798, 191, 22, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p34tt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipr1d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tghu2"]
+radius = 22.0227
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxwib"]
+atlas = ExtResource("1_q28h2")
+region = Rect2(897, 189, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojvib"]
+atlas = ExtResource("1_q28h2")
+region = Rect2(897, 206, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u551h"]
+atlas = ExtResource("1_q28h2")
+region = Rect2(897, 237, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lanbm"]
+atlas = ExtResource("1_q28h2")
+region = Rect2(897, 267, 15, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8gju"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_oxwib")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_ojvib")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_u551h")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_lanbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipr1d")
+}],
+"loop": false,
+"name": &"Plantgrowing",
+"speed": 0.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"none",
+"speed": 0.0
+}]
+
+[node name="growingzone" type="StaticBody2D"]
+script = ExtResource("1_ruos6")
+
+[node name="crop" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(2.81818, 2.83824)
+sprite_frames = SubResource("SpriteFrames_p34tt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_tghu2")
+
+[node name="Plant" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.5, -0.5)
+scale = Vector2(2.77273, 2.52941)
+sprite_frames = SubResource("SpriteFrames_o8gju")
+animation = &"none"
+
+[node name="PlantGrowingTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="PlantGrowingTimer" to="." method="_on_plant_growing_timer_timeout"]

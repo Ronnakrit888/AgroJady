@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemPlant" load_steps=4 format=3 uid="uid://ojedlp01hhs2"]
+
+[ext_resource type="Texture2D" uid="uid://c2vhj7xrkee5y" path="res://SpriteSheets/items.png" id="1_3bsvd"]
+[ext_resource type="Script" path="res://Plant/SeedItem.gd" id="2_tdenr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siw75"]
+atlas = ExtResource("1_3bsvd")
+region = Rect2(96, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_tdenr")
+amount = 9
+type = "Winter"
+display_name = "Tomato Seed"
+icon = SubResource("AtlasTexture_siw75")
+maxAmountPrStack = 999
+value = 0
+rarity = "Common"
+description = ""

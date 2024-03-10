@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlantData" load_steps=4 format=3 uid="uid://iikhnkum3ya7"]
+
+[ext_resource type="Resource" uid="uid://kr5dqt6sfj6v" path="res://Plant/SeedBags/carrot_seed.tres" id="1_yk3do"]
+[ext_resource type="PackedScene" uid="uid://c8qpgh1aq8lhb" path="res://Plant/Scene/carrot.tscn" id="2_snq2j"]
+[ext_resource type="Script" path="res://Plant/SeedData.gd" id="3_n61e0"]
+
+[resource]
+script = ExtResource("3_n61e0")
+plantItem = ExtResource("1_yk3do")
+plantScene = ExtResource("2_snq2j")

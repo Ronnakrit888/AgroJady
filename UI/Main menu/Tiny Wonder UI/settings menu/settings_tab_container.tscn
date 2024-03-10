@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=3 uid="uid://doqrnwjiery3p"]
+
+[ext_resource type="PackedScene" uid="uid://bvs6pc1oill80" path="res://settings menu/window_mode_button.tscn" id="1_ogndd"]
+[ext_resource type="PackedScene" uid="uid://52yht8fabuet" path="res://settings menu/audio_slider_settings.tscn" id="1_w2vus"]
+[ext_resource type="PackedScene" uid="uid://dxdprb2g64lt2" path="res://settings menu/resolution_mode_button.tscn" id="2_tsa5v"]
+
+[node name="Settings_Tab_Container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 65.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="Sound" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Audio_Slider_Settings" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_w2vus")]
+layout_mode = 2
+
+[node name="Audio_Slider_Settings2" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_w2vus")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Audio_Slider_Settings3" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_w2vus")]
+layout_mode = 2
+bus_name = "Sfx"
+
+[node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="Label2" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="Label3" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="Label4" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="Label5" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Window_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ogndd")]
+layout_mode = 2
+
+[node name="Resolution_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_tsa5v")]
+layout_mode = 2

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cwpkx28k3yn22"]
+
+[ext_resource type="Texture2D" uid="uid://c2vhj7xrkee5y" path="res://SpriteSheets/items.png" id="1_bbv5y"]
+[ext_resource type="Script" path="res://objects_items/scripts/Item.gd" id="2_d35hi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt3he"]
+atlas = ExtResource("1_bbv5y")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_d35hi")
+display_name = "Carrot"
+icon = SubResource("AtlasTexture_wt3he")
+maxAmountPrStack = 15
+value = 8
+rarity = "Common"
+description = ""

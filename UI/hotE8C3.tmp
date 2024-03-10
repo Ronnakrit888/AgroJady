@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd874y30upj2d"]
+
+[ext_resource type="PackedScene" uid="uid://cn7stfrrk74yl" path="res://UI/background.tscn" id="1_rvm0a"]
+[ext_resource type="Script" path="res://UI/hotbarV2.gd" id="1_w3d5h"]
+[ext_resource type="PackedScene" uid="uid://byp6uw80n5msv" path="res://UI/slot_container.tscn" id="2_mwxep"]
+[ext_resource type="Texture2D" uid="uid://du2b8n67lkob6" path="res://UI/Cutted/images/base_58.png" id="2_ncfqf"]
+[ext_resource type="Resource" uid="uid://dusacjqx6woll" path="res://player/itemEquippableResources(Array).tres" id="3_t57hv"]
+
+[node name="Hotbar" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_w3d5h")
+slotScene = ExtResource("2_mwxep")
+itemEquippableResource = ExtResource("3_t57hv")
+
+[node name="Background" parent="." instance=ExtResource("1_rvm0a")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="SelectTexture" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_ncfqf")
+stretch_mode = 4

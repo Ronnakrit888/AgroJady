@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctn80moohwmvg"]
+
+[ext_resource type="Script" path="res://Plant/slot_container.gd" id="1_7sc7o"]
+[ext_resource type="PackedScene" uid="uid://dp3xlm0mr45ek" path="res://Plant/item_info.tscn" id="1_ham6g"]
+
+[node name="SlotContainer" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7sc7o")
+
+[node name="ItemInfo" parent="." instance=ExtResource("1_ham6g")]
+layout_mode = 2
+
+[node name="ButtonHolder" type="Control" parent="."]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="ButtonHolder"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+focus_mode = 0
+
+[connection signal="button_down" from="ButtonHolder/TextureButton" to="." method="_on_texture_button_button_down"]

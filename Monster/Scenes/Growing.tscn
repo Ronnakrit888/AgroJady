@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://clashkgt23kuk"]
+
+[ext_resource type="PackedScene" uid="uid://b22dr6ne0oukw" path="res://plant_seedpack.tscn" id="1_tcqts"]
+[ext_resource type="PackedScene" uid="uid://w2hwrrxlfoov" path="res://growingzone.tscn" id="2_2egsa"]
+[ext_resource type="PackedScene" uid="uid://b53bf5vm0baek" path="res://Weirdplant.tscn" id="4_cm7kc"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.01385, 1.162)
+
+[node name="growingzone" parent="." instance=ExtResource("2_2egsa")]
+position = Vector2(125.265, 47.3322)
+scale = Vector2(1.16712, 1)
+
+[node name="Plant_Seedpack" parent="." instance=ExtResource("1_tcqts")]
+position = Vector2(240, 107)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_cm7kc")]
+position = Vector2(-21.6995, -6.88468)

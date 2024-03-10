@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0xnfd6fhwthq"]
+
+[ext_resource type="PackedScene" uid="uid://cljr6vwgxjt66" path="res://objects_items/Collectables/collectable.tscn" id="1_xtsrg"]
+[ext_resource type="Resource" uid="uid://cwpkx28k3yn22" path="res://objects_items/items/items/carrot.tres" id="2_jd18s"]
+[ext_resource type="Texture2D" uid="uid://c2vhj7xrkee5y" path="res://SpriteSheets/items.png" id="3_7eikm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne416"]
+atlas = ExtResource("3_7eikm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2v6cq"]
+resource_local_to_scene = true
+radius = 7.0
+
+[node name="Collectables" instance=ExtResource("1_xtsrg")]
+itemRes = ExtResource("2_jd18s")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_ne416")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_2v6cq")

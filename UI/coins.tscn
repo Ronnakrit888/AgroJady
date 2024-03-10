@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cblb868wmi7u5"]
+
+[ext_resource type="Texture2D" uid="uid://bsvinnxk1evds" path="res://SpriteSheets/sprite sheets/items.png" id="1_eku45"]
+[ext_resource type="LabelSettings" uid="uid://dkdk7yri6h8lo" path="res://Font.tres" id="2_6o3ms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klukx"]
+atlas = ExtResource("1_eku45")
+region = Rect2(32, 0, 16, 16)
+
+[node name="Coins" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1028.0
+offset_bottom = -603.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_klukx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_right = 95.0
+offset_bottom = 23.0
+scale = Vector2(2, 2)
+label_settings = ExtResource("2_6o3ms")
+horizontal_alignment = 2
+vertical_alignment = 1

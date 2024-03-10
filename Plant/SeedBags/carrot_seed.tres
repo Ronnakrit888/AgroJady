@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemPlant" load_steps=4 format=3 uid="uid://kr5dqt6sfj6v"]
+
+[ext_resource type="Texture2D" uid="uid://c2vhj7xrkee5y" path="res://SpriteSheets/items.png" id="1_jbr7d"]
+[ext_resource type="Script" path="res://Plant/SeedItem.gd" id="2_0jj8h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is7xu"]
+atlas = ExtResource("1_jbr7d")
+region = Rect2(32, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_0jj8h")
+amount = 5
+type = "Autumn"
+display_name = "Carrot Seed "
+icon = SubResource("AtlasTexture_is7xu")
+maxAmountPrStack = 999
+value = 0
+rarity = "Common"
+description = ""

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemPlant" load_steps=4 format=3 uid="uid://3n027njbcpft"]
+
+[ext_resource type="Texture2D" uid="uid://c2vhj7xrkee5y" path="res://SpriteSheets/items.png" id="1_sql63"]
+[ext_resource type="Script" path="res://Plant/SeedItem.gd" id="2_auafl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mbcg"]
+atlas = ExtResource("1_sql63")
+region = Rect2(144, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_auafl")
+amount = 7
+type = "Summer"
+display_name = "Corn Seed"
+icon = SubResource("AtlasTexture_2mbcg")
+maxAmountPrStack = 999
+value = 0
+rarity = "Common"
+description = ""

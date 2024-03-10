@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnd7usivv87wv"]
+
+[ext_resource type="PackedScene" uid="uid://cljr6vwgxjt66" path="res://objects_items/Collectables/collectable.tscn" id="1_kwpob"]
+[ext_resource type="Resource" uid="uid://cgnoe5x73b1se" path="res://objects_items/items/items/rock.tres" id="2_kgcyx"]
+[ext_resource type="Texture2D" uid="uid://bqa7a8pkm47bl" path="res://objects_items/Resources/resources14.png" id="2_ljw3j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jwx07"]
+resource_local_to_scene = true
+radius = 7.0
+
+[node name="Collectables" instance=ExtResource("1_kwpob")]
+itemRes = ExtResource("2_kgcyx")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ljw3j")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_jwx07")

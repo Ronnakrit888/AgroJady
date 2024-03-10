@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4uaoyqxem1w6"]
+
+[ext_resource type="Texture2D" uid="uid://qde3gwbpip06" path="res://SpriteSheets/07.png" id="1_0kdip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nepl"]
+atlas = ExtResource("1_0kdip")
+region = Rect2(96, 176, 32, 32)
+
+[node name="GridHelper" type="Sprite2D"]
+position = Vector2(592, 384)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_5nepl")
+centered = false
