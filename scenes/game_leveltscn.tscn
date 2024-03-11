@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://pa7g1th4x476" path="res://UI/shop_gui/shop_gui.tscn" id="11_xlxi7"]
 [ext_resource type="PackedScene" uid="uid://ckrte5bskt18r" path="res://UI/Hotbar.tscn" id="12_vmnwl"]
 [ext_resource type="PackedScene" uid="uid://cwcx8pg876ddh" path="res://Plant/hotbar_seed.tscn" id="13_7hbhp"]
-[ext_resource type="PackedScene" uid="uid://bkj8u037f5l43" path="res://UI/sell_zone_gui.tscn" id="14_y2ptk"]
+[ext_resource type="PackedScene" uid="uid://bkj8u037f5l43" path="res://UI/shop_gui/sell_zone_gui.tscn" id="14_y2ptk"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="15_26ss6"]
 [ext_resource type="Texture2D" uid="uid://bcjpth6njqind" path="res://UI/Cutted/images/bars_17.png" id="16_chkju"]
 [ext_resource type="PackedScene" uid="uid://dhykcev6fajsd" path="res://interaction/Sell_Zone.tscn" id="16_ef3f0"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ccfkaakscheru"]
 
-[ext_resource type="Script" path="res://UI/slotInvSell.gd" id="1_fgqym"]
+[ext_resource type="Script" path="res://UI/shop_gui/slotInvSell.gd" id="1_fgqym"]
 [ext_resource type="Texture2D" uid="uid://cgo62hbmp7ytp" path="res://UI/Cutted/images/base_21.png" id="2_j11ii"]
 [ext_resource type="Texture2D" uid="uid://fjgoqqrm500f" path="res://UI/Cutted/images/base_15.png" id="3_12tib"]
 [ext_resource type="PackedScene" uid="uid://dlqansq5khr5c" path="res://UI/itemStackGUI.tscn" id="4_ssdab"]
