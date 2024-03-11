@@ -6,6 +6,7 @@ class_name SellZoneGui
 @onready var slotsInventory : Array = $NinePatchRect/InventoryContainer.get_children()
 
 var isOpen : bool = false
+var itemInHand : ItemStackGUI
 
 func _ready():
 	connectSlots()
@@ -25,7 +26,7 @@ func connectSlots():
 		slot.pressed.connect(callable)
 
 func onSlotSelected(slot) :
-	var inventorySlot = inventory.slots[slot.get_index()]
+	print(inventory.slots[slot.get_index()].amount)
 	
 func open():
 	visible = true

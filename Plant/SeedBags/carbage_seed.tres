@@ -14,6 +14,6 @@ type = "Spring"
 display_name = "Carbage Seed"
 icon = SubResource("AtlasTexture_vw5tk")
 maxAmountPrStack = 999
-value = 0
+value = 5
 rarity = "Common"
 description = ""

@@ -17,3 +17,6 @@ func update_to_slot(slot : InventorySlot) -> void :
 	
 	background_sprite.play("filled")
 
+func isEmpty() :
+	return 
+

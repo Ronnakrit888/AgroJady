@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdtpfxxgt61wi"]
+[gd_scene load_steps=30 format=3 uid="uid://bdtpfxxgt61wi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ygxe0"]
 [ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p3y6s"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://b4uaoyqxem1w6" path="res://scenes/grid_helper.tscn" id="20_boqre"]
 [ext_resource type="Texture2D" uid="uid://bnx5uoxq4mgvy" path="res://Colors/daynightcycle-gradient-texture.tres" id="21_gk5qr"]
 [ext_resource type="PackedScene" uid="uid://dydmag1n6ramg" path="res://tile_map.tscn" id="22_fhokq"]
+[ext_resource type="PackedScene" uid="uid://bos36urvquqkq" path="res://UI/shop_gui/seed_shop/seed_shop_gui.tscn" id="22_g7jk7"]
+[ext_resource type="Script" path="res://UI/shop_gui/seed_shop/seed_shop_gui.gd" id="23_suw03"]
 [ext_resource type="PackedScene" uid="uid://1hdis8mylhni" path="res://Monster/Scenes/enemy.tscn" id="27_f8u45"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t0jvi"]
@@ -166,6 +168,9 @@ offset_left = 24.0
 offset_top = 72.0
 offset_right = 64.0
 offset_bottom = 112.0
+
+[node name="SeedShopGUI" parent="GUI" instance=ExtResource("22_g7jk7")]
+script = ExtResource("23_suw03")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("18_8wxja")

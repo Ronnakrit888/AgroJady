@@ -8,8 +8,8 @@ var hand_equip : HandEquip
 
 func _ready():
 	update()
-	inventory.updated.connect(update)
 	connectSlots()
+	inventory.updated.connect(update)
 
 func update() -> void :
 	for i in range(slots.size()) :

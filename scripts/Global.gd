@@ -3,4 +3,4 @@ extends Node
 signal seed_changed(seed)
 signal update_station
 
-var coins = 0
+var coins : int = 10000

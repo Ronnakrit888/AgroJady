@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bos36urvquqkq"]
+[gd_scene load_steps=7 format=3 uid="uid://bos36urvquqkq"]
 
+[ext_resource type="Script" path="res://UI/shop_gui/seed_shop/seed_shop_gui.gd" id="1_aowas"]
 [ext_resource type="Texture2D" uid="uid://dswhdn6shx83m" path="res://UI/Cutted/images/Shop design3.png" id="1_kkmup"]
+[ext_resource type="PackedScene" uid="uid://cxx5celd5we6l" path="res://UI/shop_gui/seed_shop/seed_extractor.tscn" id="2_r1lq0"]
+[ext_resource type="Resource" uid="uid://dmslrgqbad3ye" path="res://Plant/Scene and Data/carbage_scene_data.tres" id="3_y2cer"]
+[ext_resource type="Resource" uid="uid://iikhnkum3ya7" path="res://Plant/Scene and Data/carrot_scene_data.tres" id="4_004pj"]
+[ext_resource type="Resource" uid="uid://jchlkm75fxnb" path="res://Plant/Scene and Data/corn_scene_data.tres" id="5_pgv5s"]
 
 [node name="SeedShopGUI" type="Control"]
 layout_mode = 3
@@ -9,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aowas")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(476, 303)
@@ -26,3 +32,40 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_kkmup")
 region_rect = Rect2(96, 128, 320, 208)
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="StationContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="SeedExtractor" parent="NinePatchRect/MarginContainer/ScrollContainer/StationContainer" instance=ExtResource("2_r1lq0")]
+layout_mode = 2
+
+[node name="SeedExtractor2" parent="NinePatchRect/MarginContainer/ScrollContainer/StationContainer" instance=ExtResource("2_r1lq0")]
+layout_mode = 2
+seedItem = ExtResource("3_y2cer")
+
+[node name="SeedExtractor3" parent="NinePatchRect/MarginContainer/ScrollContainer/StationContainer" instance=ExtResource("2_r1lq0")]
+layout_mode = 2
+seedItem = ExtResource("4_004pj")
+
+[node name="SeedExtractor4" parent="NinePatchRect/MarginContainer/ScrollContainer/StationContainer" instance=ExtResource("2_r1lq0")]
+layout_mode = 2
+seedItem = ExtResource("5_pgv5s")

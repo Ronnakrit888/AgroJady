@@ -14,6 +14,6 @@ type = "Autumn"
 display_name = "Carrot Seed "
 icon = SubResource("AtlasTexture_is7xu")
 maxAmountPrStack = 999
-value = 0
+value = 5
 rarity = "Common"
 description = ""
