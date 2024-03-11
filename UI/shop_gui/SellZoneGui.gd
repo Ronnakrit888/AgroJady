@@ -25,7 +25,7 @@ func connectSlots():
 		slot.pressed.connect(callable)
 
 func onSlotSelected(slot) :
-	print(inventory.slots[slot.get_index()].amount)
+	var inventorySlot = inventory.slots[slot.get_index()]
 	
 func open():
 	visible = true
