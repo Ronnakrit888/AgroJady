@@ -1,7 +1,9 @@
 extends HBoxContainer
 
-@onready var seed = $Seed
 @export var seedItem : PlantData
+
+@onready var seed = $Seed
+@onready var flash = $flash
 
 func _ready():
 	_update_item_containers()
@@ -19,7 +21,7 @@ func _on_texture_button_button_down():
 			Global.coins -= seedItem.get_value()
 			_update_item_containers()
 		else :
-			return
+			flash.play("flash_animation")
 			
 func update_slots() -> void :
 	seed.set_label(seedItem.get_amount())
