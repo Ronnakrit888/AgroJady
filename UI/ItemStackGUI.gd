@@ -17,7 +17,10 @@ func update():
 	if inventorySlot.amount > 1:
 		amountLabel.visible = true
 		amountLabel.text = str(inventorySlot.amount)
-	else:
+	elif inventorySlot.amount == 1 :
 		amountLabel.visible = false
+	else :
+		amountLabel.visible = false
+		itemSprite.visible = false
 
 

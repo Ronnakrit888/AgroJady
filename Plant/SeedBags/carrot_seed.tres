@@ -10,7 +10,7 @@ region = Rect2(32, 16, 16, 16)
 [resource]
 script = ExtResource("2_0jj8h")
 amount = 5
-type = "Autumn"
+type = "Winter"
 display_name = "Carrot Seed "
 icon = SubResource("AtlasTexture_is7xu")
 maxAmountPrStack = 999

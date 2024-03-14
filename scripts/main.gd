@@ -31,7 +31,7 @@ func _physics_process(_delta):
 	grid_helper.position = playerMapCoord * GRID_SIZE
 	
 	var cellLocalCoord = tileMap.local_to_map(grid_helper.position)
-	var tile : TileData = tileMap.get_cell_tile_data(1, cellLocalCoord)
+	var tile : TileData = tileMap.get_cell_tile_data(2, cellLocalCoord)
 	
 	if tile == null :
 		grid_helper.visible = false
@@ -42,23 +42,25 @@ func _physics_process(_delta):
 
 func _on_player_planting():
 	var cellLocalCoord = tileMap.local_to_map(grid_helper.position)
-	var tile : TileData = tileMap.get_cell_tile_data(1, cellLocalCoord)
-	
-	if tile == null or currentSeed == null :
-		return
-	
-	if tile.get_custom_data("Spring") :
-		var plantCoord = tileMap.local_to_map(grid_helper.global_position)
-		if not plants.has(plantCoord) : 
-			if currentSeed.get_type() == "Spring":
-				if currentSeed.seed_left() :
-					currentSeed.substract_amount()
-					_plant_seed(plantCoord)
-				else :
-					gui.hotbar_slot_empty(currentSeed)
-				
-		if is_harvestable(plantCoord) :
-			harvest_plant(plantCoord)
+	var layers = tileMap.get_layers_count()
+	for layer in layers :
+		var tile : TileData = tileMap.get_cell_tile_data(layer, cellLocalCoord)
+
+		if tile == null or currentSeed == null :
+			continue
+		
+		if tile.get_custom_data("Summer") :
+			var plantCoord = tileMap.local_to_map(grid_helper.global_position)
+			if not plants.has(plantCoord) : 
+				if currentSeed.get_type() == "Summer":
+					if currentSeed.seed_left() :
+						currentSeed.substract_amount()
+						_plant_seed(plantCoord)
+					else :
+						gui.hotbar_slot_empty(currentSeed)
+					
+			if is_harvestable(plantCoord) :
+				harvest_plant(plantCoord)
 
 func harvest_plant(key) -> void :
 	var plant = plants.get(key)
@@ -77,7 +79,6 @@ func _plant_seed(coord) -> void :
 	plants[coord] = plant
 	plant.global_position = tileMap.map_to_local(coord)
 	
-
 func _on_seed_changed(new_seed) -> void : 
 	currentSeed = new_seed
 

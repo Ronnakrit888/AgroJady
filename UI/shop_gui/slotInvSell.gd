@@ -3,6 +3,8 @@ extends Button
 @onready var background_sprite : AnimatedSprite2D = $background
 @onready var item_stack_gui : ItemStackGUI = $CenterContainer/Panel
 
+@onready var inventory : Inventory = preload("res://UI/Inv.tres")
+
 var index : int 
 
 func update_to_slot(slot : InventorySlot) -> void :
@@ -17,6 +19,10 @@ func update_to_slot(slot : InventorySlot) -> void :
 	
 	background_sprite.play("filled")
 
-func isEmpty() :
-	return 
+func takeItem():
+	item_stack_gui.inventorySlot.amount -= 1
+	item_stack_gui.update()
+	print(item_stack_gui.inventorySlot.amount)
+	
+	
 

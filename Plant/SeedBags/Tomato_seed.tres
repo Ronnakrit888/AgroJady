@@ -10,7 +10,7 @@ region = Rect2(96, 16, 16, 16)
 [resource]
 script = ExtResource("2_tdenr")
 amount = 5
-type = "Winter"
+type = "Summer"
 display_name = "Tomato Seed"
 icon = SubResource("AtlasTexture_siw75")
 maxAmountPrStack = 999

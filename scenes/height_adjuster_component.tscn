@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://6trs67ycdg64"]
+
+[ext_resource type="Script" path="res://scripts/height_adjuster_component.gd" id="1_lx0vl"]
+
+[node name="HeightAdjusterComponent" type="Node"]
+script = ExtResource("1_lx0vl")
