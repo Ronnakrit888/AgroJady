@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ygxe0"]
 [ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p3y6s"]
-[ext_resource type="Script" path="res://scripts/dynamic_camera.gd" id="2_pcd1c"]
 [ext_resource type="PackedScene" uid="uid://cb1fw2tjn5m8i" path="res://scenes/ResourceNode_Tree.tscn" id="3_gr60o"]
 [ext_resource type="PackedScene" uid="uid://dxwfmdstadut6" path="res://scenes/ResourceNode_Rock.tscn" id="4_0a0g4"]
 [ext_resource type="Resource" uid="uid://dqd1oalaq4y18" path="res://objects_items/Resources/ResourceType/minable.tres" id="5_uxcp2"]
+[ext_resource type="PackedScene" uid="uid://ckkusughgvrr6" path="res://scenes/door.tscn" id="6_70sbn"]
 [ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="7_j0wvi"]
 [ext_resource type="PackedScene" uid="uid://coe2tgc7sfe3x" path="res://UI/inventory_gui.tscn" id="7_ssoyc"]
 [ext_resource type="PackedScene" uid="uid://cblb868wmi7u5" path="res://UI/coins.tscn" id="8_a6e6y"]
@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bq5jpa8ih6qf2" path="res://UI/day_night_cycle_ui.tscn" id="19_uamut"]
 [ext_resource type="PackedScene" uid="uid://b4uaoyqxem1w6" path="res://scenes/grid_helper.tscn" id="20_boqre"]
 [ext_resource type="Texture2D" uid="uid://bnx5uoxq4mgvy" path="res://Colors/daynightcycle-gradient-texture.tres" id="21_gk5qr"]
-[ext_resource type="PackedScene" uid="uid://dydmag1n6ramg" path="res://tile_map.tscn" id="22_fhokq"]
+[ext_resource type="PackedScene" uid="uid://dydmag1n6ramg" path="res://scenes/tile_map.tscn" id="22_fhokq"]
 [ext_resource type="PackedScene" uid="uid://bos36urvquqkq" path="res://UI/shop_gui/seed_shop/seed_shop_gui.tscn" id="22_g7jk7"]
 [ext_resource type="PackedScene" uid="uid://1hdis8mylhni" path="res://Monster/Scenes/enemy.tscn" id="27_f8u45"]
 [ext_resource type="PackedScene" uid="uid://6trs67ycdg64" path="res://scenes/height_adjuster_component.tscn" id="28_dahbj"]
@@ -38,15 +38,6 @@ outline_color = Color(0, 0, 0, 1)
 y_sort_enabled = true
 script = ExtResource("1_ygxe0")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(80, 776)
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-script = ExtResource("2_pcd1c")
-
 [node name="TileMap" parent="." instance=ExtResource("22_fhokq")]
 
 [node name="Plant" type="Node2D" parent="TileMap"]
@@ -56,14 +47,12 @@ position = Vector2(-480, -512)
 [node name="player" parent="TileMap" instance=ExtResource("2_p3y6s")]
 position = Vector2(560, 208)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="TileMap/player"]
-remote_path = NodePath("../../../Camera2D")
-
 [node name="GridHelper" parent="TileMap" instance=ExtResource("20_boqre")]
 position = Vector2(96, -144)
 
 [node name="WorldObjects" type="Node2D" parent="."]
 y_sort_enabled = true
+position = Vector2(-463, -547)
 
 [node name="ResourceNode_Tree" parent="WorldObjects" instance=ExtResource("3_gr60o")]
 position = Vector2(1149, 608)
@@ -71,6 +60,10 @@ position = Vector2(1149, 608)
 [node name="ResourceNode_Rock" parent="WorldObjects" instance=ExtResource("4_0a0g4")]
 position = Vector2(1088, 611)
 node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("5_uxcp2")])
+
+[node name="Door" parent="WorldObjects" instance=ExtResource("6_70sbn")]
+position = Vector2(1127, 739)
+collision_mask = 2
 
 [node name="GUI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -173,10 +166,10 @@ gradient_texture = ExtResource("21_gk5qr")
 INGAME_SPEED = 10.0
 
 [node name="shop" parent="." instance=ExtResource("11_nkisx")]
-position = Vector2(1088, 688)
+position = Vector2(569, 146)
 
 [node name="SellZone" parent="." instance=ExtResource("16_ef3f0")]
-position = Vector2(936, 624)
+position = Vector2(417, 82)
 
 [node name="Monster" type="Node2D" parent="."]
 y_sort_enabled = true

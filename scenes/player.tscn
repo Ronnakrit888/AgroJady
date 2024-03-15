@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://s8k74qfuj5v5"]
+[gd_scene load_steps=20 format=3 uid="uid://s8k74qfuj5v5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wy53b"]
 [ext_resource type="Resource" uid="uid://bj68gc064jcvt" path="res://UI/Inv.tres" id="2_3kxq2"]
 [ext_resource type="Texture2D" uid="uid://5jmdhb762vu5" path="res://player/idle.png" id="2_cj37f"]
 [ext_resource type="Texture2D" uid="uid://cyypu4h7q6iyr" path="res://player/walk.png" id="3_f3l4s"]
 [ext_resource type="Texture2D" uid="uid://qx2eq1htbg1e" path="res://player/axe.png" id="4_4kpu7"]
+[ext_resource type="Script" path="res://scripts/dynamic_camera.gd" id="7_3tch1"]
 [ext_resource type="Script" path="res://scripts/HandEquip.gd" id="8_oppeu"]
 
 [sub_resource type="Animation" id="Animation_jdni8"]
@@ -828,6 +829,14 @@ collision_mask = 65
 [node name="BodyArea" type="CollisionShape2D" parent="AreaDetect"]
 shape = SubResource("CircleShape2D_2htuy")
 debug_color = Color(0.454902, 0.596078, 0, 0.419608)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("7_3tch1")
 
 [connection signal="haveEquipItem" from="HandEquip" to="." method="_on_hand_equip_have_equip_item"]
 [connection signal="noEquipItem" from="HandEquip" to="." method="_on_hand_equip_no_equip_item"]
