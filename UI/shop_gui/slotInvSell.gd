@@ -20,12 +20,20 @@ func update_to_slot(slot : InventorySlot) -> void :
 	background_sprite.play("filled")
 
 func takeItem():
-	if item_stack_gui.inventorySlot.item.value == 0 :
+	var slot = item_stack_gui.inventorySlot
+	if !slot or slot.item.value == 0:
 		return
 		
-	item_stack_gui.inventorySlot.amount -= 1
+	if slot.amount != 0 :
+		slot.amount -= 1
+		print(slot.amount)
+		
 	item_stack_gui.update()
-	print(item_stack_gui.inventorySlot.amount)
+	inventory.updated.emit()
+	
+	
+	
+	
 
 	
 

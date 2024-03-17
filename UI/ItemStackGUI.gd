@@ -22,5 +22,7 @@ func update():
 	else :
 		amountLabel.visible = false
 		itemSprite.visible = false
+		inventorySlot.item = null
+		inventorySlot = null
 
 
