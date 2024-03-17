@@ -1,0 +1,228 @@
+[gd_scene load_steps=32 format=3 uid="uid://bdtpfxxgt61wi"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_y5533"]
+[ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p8ojd"]
+[ext_resource type="Script" path="res://scripts/dynamic_camera.gd" id="3_g7hr8"]
+[ext_resource type="PackedScene" uid="uid://dydmag1n6ramg" path="res://scenes/tile_map.tscn" id="4_u4t28"]
+[ext_resource type="PackedScene" uid="uid://b4uaoyqxem1w6" path="res://scenes/grid_helper.tscn" id="5_b4lqp"]
+[ext_resource type="PackedScene" uid="uid://cb1fw2tjn5m8i" path="res://scenes/ResourceNode_Tree.tscn" id="6_8emf4"]
+[ext_resource type="PackedScene" uid="uid://dxwfmdstadut6" path="res://scenes/ResourceNode_Rock.tscn" id="7_hohl0"]
+[ext_resource type="Resource" uid="uid://dqd1oalaq4y18" path="res://objects_items/Resources/ResourceType/minable.tres" id="8_wyqin"]
+[ext_resource type="PackedScene" uid="uid://c4o4m0scee8bn" path="res://scenes/door.tscn" id="9_wpkki"]
+[ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="10_tqpsd"]
+[ext_resource type="PackedScene" uid="uid://cblb868wmi7u5" path="res://UI/coins.tscn" id="11_bx3pj"]
+[ext_resource type="Script" path="res://UI/coins.gd" id="12_raio2"]
+[ext_resource type="PackedScene" uid="uid://coe2tgc7sfe3x" path="res://UI/inventory_gui.tscn" id="13_7skpm"]
+[ext_resource type="PackedScene" uid="uid://pa7g1th4x476" path="res://UI/shop_gui/shop_gui.tscn" id="14_0ksqe"]
+[ext_resource type="PackedScene" uid="uid://ckrte5bskt18r" path="res://UI/Hotbar.tscn" id="15_mrmc4"]
+[ext_resource type="PackedScene" uid="uid://cwcx8pg876ddh" path="res://Plant/hotbar_seed.tscn" id="16_ypwxb"]
+[ext_resource type="PackedScene" uid="uid://bkj8u037f5l43" path="res://UI/shop_gui/sell_zone_gui.tscn" id="17_78m6q"]
+[ext_resource type="Texture2D" uid="uid://djrxhc36clipn" path="res://UI/Cutted/images/bars_02.png" id="18_8rl70"]
+[ext_resource type="Texture2D" uid="uid://bcjpth6njqind" path="res://UI/Cutted/images/bars_17.png" id="19_i8fx1"]
+[ext_resource type="Script" path="res://scripts/HealthBar.gd" id="20_1jcm6"]
+[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="21_7hohi"]
+[ext_resource type="PackedScene" uid="uid://bos36urvquqkq" path="res://UI/shop_gui/seed_shop/seed_shop_gui.tscn" id="23_nmq3a"]
+[ext_resource type="PackedScene" uid="uid://b4mitotcubsj0" path="res://UI/daynightcycle_ui.tscn" id="23_yhcr7"]
+[ext_resource type="Script" path="res://scripts/DayNightCycle.gd" id="24_tacxu"]
+[ext_resource type="Texture2D" uid="uid://bnx5uoxq4mgvy" path="res://Colors/daynightcycle-gradient-texture.tres" id="25_vfpyi"]
+[ext_resource type="PackedScene" uid="uid://br50uegnqyt2m" path="res://interaction/shopTool.tscn" id="26_wd6j5"]
+[ext_resource type="PackedScene" uid="uid://dhykcev6fajsd" path="res://interaction/Sell_Zone.tscn" id="27_ag4oa"]
+[ext_resource type="PackedScene" uid="uid://1hdis8mylhni" path="res://Monster/Scenes/enemy.tscn" id="28_bm0fs"]
+[ext_resource type="PackedScene" uid="uid://dl8lnin5t4r0h" path="res://scenes/scene_trigger.tscn" id="30_vlww1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t0jvi"]
+font = ExtResource("21_7hohi")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_306s6"]
+size = Vector2(18, 9)
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_y5533")
+
+[node name="Player" parent="." instance=ExtResource("2_p8ojd")]
+position = Vector2(560, 208)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("3_g7hr8")
+
+[node name="TileMap" parent="." instance=ExtResource("4_u4t28")]
+layer_5/tile_data = PackedInt32Array(917553, 196612, 0, 983085, 589828, 3)
+layer_7/name = "Walkpath"
+layer_7/tile_data = PackedInt32Array(786473, 655364, 8, 852009, 589828, 8, 852008, 589828, 10)
+
+[node name="Plant" type="Node2D" parent="TileMap"]
+y_sort_enabled = true
+position = Vector2(-480, -512)
+
+[node name="GridHelper" parent="TileMap" instance=ExtResource("5_b4lqp")]
+position = Vector2(96, -144)
+
+[node name="WorldObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-463, -547)
+
+[node name="ResourceNode_Tree" parent="WorldObjects" instance=ExtResource("6_8emf4")]
+position = Vector2(1149, 608)
+
+[node name="ResourceNode_Rock" parent="WorldObjects" instance=ExtResource("7_hohl0")]
+position = Vector2(1088, 611)
+node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("8_wyqin")])
+
+[node name="Door" parent="WorldObjects" instance=ExtResource("9_wpkki")]
+position = Vector2(1127, 740)
+
+[node name="GUI" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("10_tqpsd")
+
+[node name="Coins" parent="GUI" instance=ExtResource("11_bx3pj")]
+offset_left = 24.0
+offset_top = 584.0
+offset_right = -1004.0
+offset_bottom = -19.0
+script = ExtResource("12_raio2")
+
+[node name="InventoryGUI" parent="GUI" instance=ExtResource("13_7skpm")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -78.0
+offset_right = 122.5
+offset_bottom = 78.0
+
+[node name="ShopGUI" parent="GUI" instance=ExtResource("14_0ksqe")]
+visible = false
+
+[node name="Hotbar" parent="GUI" instance=ExtResource("15_mrmc4")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -38.0
+offset_right = 79.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HotbarSeed" parent="GUI" instance=ExtResource("16_ypwxb")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -78.0
+offset_right = 14.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="SellZoneGUI" parent="GUI" instance=ExtResource("17_78m6q")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -78.0
+offset_right = 122.5
+offset_bottom = 78.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="GUI" node_paths=PackedStringArray("player")]
+custom_minimum_size = Vector2(48, 7)
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 23.0
+texture_under = ExtResource("18_8rl70")
+texture_progress = ExtResource("19_i8fx1")
+script = ExtResource("20_1jcm6")
+player = NodePath("../../Player")
+
+[node name="Label" type="Label" parent="GUI/HealthBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -2.1
+offset_right = 40.0
+offset_bottom = 12.9
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+label_settings = SubResource("LabelSettings_t0jvi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SeedShopGUI" parent="GUI" instance=ExtResource("23_nmq3a")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -78.0
+offset_right = 122.5
+offset_bottom = 78.0
+
+[node name="DayNightCycleUI" parent="GUI" instance=ExtResource("23_yhcr7")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 16.0
+offset_bottom = 32.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("24_tacxu")
+gradient_texture = ExtResource("25_vfpyi")
+INGAME_SPEED = 15.0
+
+[node name="shop" parent="." instance=ExtResource("26_wd6j5")]
+position = Vector2(569, 146)
+
+[node name="SellZone" parent="." instance=ExtResource("27_ag4oa")]
+position = Vector2(417, 82)
+
+[node name="Monster" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="enemy" parent="Monster" instance=ExtResource("28_bm0fs")]
+position = Vector2(1136, 760)
+
+[node name="HouseSceneTrigger" parent="." instance=ExtResource("30_vlww1")]
+position = Vector2(664, 193)
+connected_scene = "inside_house"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseSceneTrigger"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_306s6")
+debug_color = Color(0.462745, 0.054902, 0.0705882, 0.419608)
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="InsideHouse" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(664, 208)
+
+[connection signal="planting" from="Player" to="." method="_on_player_planting"]
+[connection signal="closed" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_closed"]
+[connection signal="opened" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_opened"]

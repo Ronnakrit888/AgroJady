@@ -1,4 +1,4 @@
-extends Node
+extends BaseScene
 
 class_name HeightAdjusterComponent
 

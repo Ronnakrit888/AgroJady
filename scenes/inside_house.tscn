@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce7ic3ty5tgek"]
+[gd_scene load_steps=17 format=3 uid="uid://ce7ic3ty5tgek"]
 
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_4m3nm"]
 [ext_resource type="Texture2D" uid="uid://bdt3b4e56pa31" path="res://tilemaps/Furniture/wall decorations.png" id="1_ld6r1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dcu53rfg454ok" path="res://tilemaps/Furniture/carpets.png" id="4_i0bb5"]
 [ext_resource type="Texture2D" uid="uid://d0k4fynknek6g" path="res://tilemaps/walls and floors.png" id="5_s05ta"]
 [ext_resource type="Texture2D" uid="uid://dplu4ts8fk512" path="res://tilemaps/Furniture/bedroom.png" id="6_4se4b"]
+[ext_resource type="PackedScene" uid="uid://dl8lnin5t4r0h" path="res://scenes/scene_trigger.tscn" id="8_y3go5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kji5u"]
 texture = ExtResource("1_ld6r1")
@@ -1475,7 +1476,7 @@ texture = ExtResource("5_s05ta")
 0:23/0 = 0
 0:23/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:23/0/physics_layer_0/angular_velocity = 0.0
-0:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, 6, 8, 6)
+0:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, -8, -7, -8, -7, 6, 8, 6)
 1:23/0 = 0
 1:23/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:23/0/physics_layer_0/angular_velocity = 0.0
@@ -1483,7 +1484,7 @@ texture = ExtResource("5_s05ta")
 2:23/0 = 0
 2:23/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:23/0/physics_layer_0/angular_velocity = 0.0
-2:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, 6, 8, 6)
+2:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, 7, -8, 7, 6, -8, 6)
 3:23/0 = 0
 3:23/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:23/0/physics_layer_0/angular_velocity = 0.0
@@ -1510,11 +1511,11 @@ texture = ExtResource("5_s05ta")
 texture = ExtResource("6_4se4b")
 2:2/size_in_atlas = Vector2i(2, 2)
 2:2/0 = 0
-2:2/0/y_sort_origin = 5
+2:2/0/y_sort_origin = 10
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, 8, 14, 8, 14, 16, -15, 16)
-2:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-15, -15, 14, -15, 14, -8, -15, -8)
+2:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-15, -15, 14, -15, 14, -5, -15, -5)
 2:4/size_in_atlas = Vector2i(2, 2)
 2:4/0 = 0
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -1584,17 +1585,19 @@ texture = ExtResource("6_4se4b")
 0:4/0 = 0
 0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:4/0/physics_layer_0/angular_velocity = 0.0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5, -8, -5, 8, -8, 8)
 0:5/0 = 0
 0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:5/0/physics_layer_0/angular_velocity = 0.0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5, 8, 5, 8, 8, -8, 8)
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5, -8, -5, 5, 8, 5, 8, 8, -8, 8)
 1:5/0 = 0
 1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:5/0/physics_layer_0/angular_velocity = 0.0
-1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5, 8, 5, 8, 8, -8, 8)
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 5, -8, 5, 5, -8, 5, -8, 8, 8, 8)
 1:4/0 = 0
 1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:4/0/physics_layer_0/angular_velocity = 0.0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 5, -8, 5, 8, 8, 8)
 
 [sub_resource type="TileSet" id="TileSet_i60ww"]
 physics_layer_0/collision_layer = 1
@@ -1605,6 +1608,9 @@ sources/4 = SubResource("TileSetAtlasSource_kijry")
 sources/5 = SubResource("TileSetAtlasSource_hrens")
 sources/6 = SubResource("TileSetAtlasSource_am2of")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shgrp"]
+size = Vector2(16, 9)
+
 [node name="InsideHouse" type="Node2D"]
 script = ExtResource("1_4m3nm")
 
@@ -1612,10 +1618,8 @@ script = ExtResource("1_4m3nm")
 tile_set = SubResource("TileSet_i60ww")
 format = 2
 layer_0/name = "BackGround"
-layer_0/z_index = -1
 layer_0/tile_data = PackedInt32Array(131077, 196613, 1, 131078, 196613, 1, 131079, 196613, 1, 131080, 196613, 1, 131081, 196613, 1, 196613, 5, 23, 196614, 65541, 23, 196615, 65541, 23, 196616, 65541, 23, 196617, 131077, 23, 131076, 131077, 0, 196612, 131077, 1, 262148, 131077, 1, 327684, 131077, 1, 393220, 131077, 1, 131082, 327685, 0, 196618, 327685, 1, 262154, 327685, 1, 327690, 327685, 2, 327691, 196613, 1, 327692, 196613, 1, 458756, 131077, 1, 524292, 131077, 1, 589828, 131077, 4, 589829, 196613, 4, 589831, 262149, 4, 589832, 196613, 2, 589833, 196613, 2, 589834, 196613, 2, 589835, 196613, 2, 589836, 196613, 2, 327693, 131077, 2, 262157, 131077, 0, 262158, 196613, 1, 262159, 196613, 1, 589837, 196613, 2, 589838, 196613, 2, 589839, 196613, 2, 589840, 196613, 2, 262160, 196613, 1, 393226, 5, 23, 393227, 65541, 23, 393228, 65541, 23, 393229, 131077, 23, 327695, 65541, 23, 262149, 5, 0, 327685, 5, 2, 393221, 5, 1, 458757, 5, 2, 524293, 5, 0, 524294, 5, 2, 524295, 5, 2, 524296, 5, 2, 524297, 5, 2, 524298, 5, 0, 524299, 5, 0, 524300, 5, 0, 524301, 5, 2, 524302, 5, 2, 524303, 5, 2, 524304, 5, 0, 458768, 5, 0, 393230, 5, 0, 458766, 5, 0, 458765, 5, 2, 458764, 5, 0, 458763, 5, 1, 458762, 65541, 0, 458761, 5, 2, 393225, 5, 2, 327689, 5, 2, 262153, 5, 0, 262152, 5, 2, 327688, 5, 0, 393224, 5, 0, 458760, 5, 2, 458759, 5, 2, 393223, 65541, 1, 327687, 65541, 0, 262151, 5, 2, 262150, 5, 2, 327686, 5, 2, 393222, 5, 0, 458758, 5, 2, 327694, 5, 23, 589830, 5, 2, 458767, 65541, 1, 393231, 5, 2, 393232, 5, 2, 393233, 5, 2, 458769, 5, 2, 524305, 5, 2, 327697, 65541, 23, 327698, 131077, 23, 327696, 65541, 23, 262161, 196613, 1, 262162, 196613, 1, 262163, 327685, 0, 327699, 327685, 1, 393235, 327685, 1, 458771, 327685, 1, 524307, 327685, 1, 589843, 327685, 4, 589842, 196613, 2, 589841, 196613, 2, 524306, 65541, 1, 458770, 5, 0, 393234, 5, 2)
 layer_1/name = "Floor"
-layer_1/z_index = -1
 layer_1/tile_data = PackedInt32Array(458758, 131076, 6, 458759, 196612, 6, 393227, 131073, 5, 393228, 196609, 5, 327696, 65537, 4)
 layer_2/name = "Items"
 layer_2/y_sort_enabled = true
@@ -1623,5 +1627,12 @@ layer_2/tile_data = PackedInt32Array(196616, 262146, 6, 262152, 262146, 7, 19661
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
-[node name="Any" type="Marker2D" parent="EntranceMarkers"]
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(104, 136)
+
+[node name="SceneTrigger" parent="." instance=ExtResource("8_y3go5")]
+connected_scene = "world"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(104, 155.5)
+shape = SubResource("RectangleShape2D_shgrp")

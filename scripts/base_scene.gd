@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 class_name BaseScene
 
@@ -16,6 +16,10 @@ func _ready():
 	pos_player()
 
 func pos_player() -> void :
+	var last_scene = scene_manager.last_scene_name
+	if last_scene.is_empty() :
+		last_scene = "any"
+		
 	for entrance in entrance_markers.get_children() :
-		if entrance is Marker2D and entrance.name == "any" :
+		if entrance is Marker2D and entrance.name == "any" or entrance.name == last_scene:
 			player.global_position = entrance.global_position

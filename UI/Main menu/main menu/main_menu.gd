@@ -7,7 +7,7 @@ extends Control
 @onready var settings_menu = $Settings_Menu as SettingsMenu
 @onready var margin_container = $MarginContainer as MarginContainer
 
-@export var start_level = preload("res://scenes/game_leveltscn.tscn") as PackedScene
+@export var start_level = preload("res://scenes/world.tscn") as PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
