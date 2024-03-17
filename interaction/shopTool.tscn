@@ -28,7 +28,6 @@ region_enabled = true
 region_rect = Rect2(744, 360, 32, 20)
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_l4b5y")]
-visible = false
 action_name = "crafting"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bdtpfxxgt61wi"]
+[gd_scene load_steps=31 format=3 uid="uid://bdtpfxxgt61wi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ygxe0"]
 [ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p3y6s"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="7_j0wvi"]
 [ext_resource type="PackedScene" uid="uid://coe2tgc7sfe3x" path="res://UI/inventory_gui.tscn" id="7_ssoyc"]
 [ext_resource type="PackedScene" uid="uid://cblb868wmi7u5" path="res://UI/coins.tscn" id="8_a6e6y"]
+[ext_resource type="PackedScene" uid="uid://c4o4m0scee8bn" path="res://scenes/door.tscn" id="8_c5fwa"]
 [ext_resource type="Script" path="res://UI/coins.gd" id="9_bdnvc"]
 [ext_resource type="PackedScene" uid="uid://br50uegnqyt2m" path="res://interaction/shopTool.tscn" id="11_nkisx"]
 [ext_resource type="PackedScene" uid="uid://pa7g1th4x476" path="res://UI/shop_gui/shop_gui.tscn" id="11_xlxi7"]
@@ -38,7 +39,19 @@ outline_color = Color(0, 0, 0, 1)
 y_sort_enabled = true
 script = ExtResource("1_ygxe0")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(560, 208)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("28_e2mcc")
+
 [node name="TileMap" parent="." instance=ExtResource("22_fhokq")]
+layer_5/tile_data = PackedInt32Array(917553, 196612, 0, 983085, 589828, 3)
+layer_7/name = "Walkpath"
+layer_7/tile_data = PackedInt32Array(786473, 655364, 8, 852009, 589828, 8, 852008, 589828, 10)
 
 [node name="Plant" type="Node2D" parent="TileMap"]
 y_sort_enabled = true
@@ -63,6 +76,9 @@ position = Vector2(1149, 608)
 [node name="ResourceNode_Rock" parent="WorldObjects" instance=ExtResource("4_0a0g4")]
 position = Vector2(1088, 611)
 node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("5_uxcp2")])
+
+[node name="Door" parent="WorldObjects" instance=ExtResource("8_c5fwa")]
+position = Vector2(1127, 740)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -179,15 +195,6 @@ position = Vector2(1136, 760)
 [node name="HeightAdjusterComponent" parent="." node_paths=PackedStringArray("body", "tilemap") instance=ExtResource("28_dahbj")]
 body = NodePath("../TileMap/player")
 tilemap = NodePath("../TileMap")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(560, 208)
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-script = ExtResource("28_e2mcc")
 
 [connection signal="planting" from="TileMap/player" to="." method="_on_player_planting"]
 [connection signal="closed" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_closed"]
