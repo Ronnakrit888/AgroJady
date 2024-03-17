@@ -1,11 +1,11 @@
-extends Node2D
+extends BaseScene
 
 @onready var canvas_modulate = $CanvasModulate
 @onready var tileMap : TileMap = $TileMap
-@onready var player : Player = $TileMap/player
 @onready var grid_helper = $TileMap/GridHelper
 @onready var gui = $GUI
 @onready var day_time_ui = $GUI/DayNightCycleUI
+@onready var camera = $Camera2D
 
 var currentSeed : PlantData
 
@@ -14,6 +14,9 @@ const GRID_SIZE = 16
 var plants : Dictionary = {}
 
 func _ready() :
+	super()
+	camera.follow_node = player
+	
 	canvas_modulate.time_tick.connect(day_time_ui.set_daytime)
 	grid_helper.visible = false
 	Global.seed_changed.connect(_on_seed_changed)

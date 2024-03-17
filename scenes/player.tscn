@@ -1,11 +1,11 @@
 [gd_scene load_steps=19 format=3 uid="uid://s8k74qfuj5v5"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_wy53b"]
-[ext_resource type="Resource" uid="uid://bj68gc064jcvt" path="res://UI/Inv.tres" id="2_3kxq2"]
-[ext_resource type="Texture2D" uid="uid://5jmdhb762vu5" path="res://player/idle.png" id="2_cj37f"]
-[ext_resource type="Texture2D" uid="uid://cyypu4h7q6iyr" path="res://player/walk.png" id="3_f3l4s"]
-[ext_resource type="Texture2D" uid="uid://qx2eq1htbg1e" path="res://player/axe.png" id="4_4kpu7"]
-[ext_resource type="Script" path="res://scripts/HandEquip.gd" id="8_oppeu"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_rq5be"]
+[ext_resource type="Resource" uid="uid://bj68gc064jcvt" path="res://UI/Inv.tres" id="2_fu3xu"]
+[ext_resource type="Texture2D" uid="uid://qx2eq1htbg1e" path="res://player/axe.png" id="3_syjek"]
+[ext_resource type="Texture2D" uid="uid://5jmdhb762vu5" path="res://player/idle.png" id="4_03e5o"]
+[ext_resource type="Texture2D" uid="uid://cyypu4h7q6iyr" path="res://player/walk.png" id="5_iklsp"]
+[ext_resource type="Script" path="res://scripts/HandEquip.gd" id="6_lfsds"]
 
 [sub_resource type="Animation" id="Animation_jdni8"]
 length = 0.001
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_4kpu7")]
+"values": [ExtResource("3_syjek")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -205,7 +205,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_4kpu7")]
+"values": [ExtResource("3_syjek")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -367,7 +367,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_cj37f")]
+"values": [ExtResource("4_03e5o")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -481,7 +481,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_cj37f")]
+"values": [ExtResource("4_03e5o")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -571,7 +571,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_f3l4s")]
+"values": [ExtResource("5_iklsp")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -783,18 +783,18 @@ size = Vector2(12, 13)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2htuy"]
 radius = 11.0
 
-[node name="player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 position = Vector2(0, -6)
 collision_layer = 3
 collision_mask = 5
-script = ExtResource("1_wy53b")
+script = ExtResource("1_rq5be")
 speed = 70.0
-inventory = ExtResource("2_3kxq2")
+inventory = ExtResource("2_fu3xu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
-texture = ExtResource("4_4kpu7")
+texture = ExtResource("3_syjek")
 flip_h = true
 hframes = 10
 
@@ -811,7 +811,7 @@ shape = SubResource("RectangleShape2D_wsui4")
 y_sort_enabled = true
 flip_h = true
 hframes = 10
-script = ExtResource("8_oppeu")
+script = ExtResource("6_lfsds")
 
 [node name="Area2D" type="Area2D" parent="HandEquip"]
 

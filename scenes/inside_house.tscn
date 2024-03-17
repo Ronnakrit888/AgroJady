@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://ce7ic3ty5tgek"]
+[gd_scene load_steps=15 format=3 uid="uid://ce7ic3ty5tgek"]
 
+[ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_4m3nm"]
 [ext_resource type="Texture2D" uid="uid://bdt3b4e56pa31" path="res://tilemaps/Furniture/wall decorations.png" id="1_ld6r1"]
 [ext_resource type="Texture2D" uid="uid://mner2n4ebj3n" path="res://tilemaps/Furniture/office.png" id="2_hau0g"]
 [ext_resource type="Texture2D" uid="uid://0ijpbqcjisyy" path="res://tilemaps/Furniture/decorations.png" id="3_uymtq"]
@@ -1605,6 +1606,7 @@ sources/5 = SubResource("TileSetAtlasSource_hrens")
 sources/6 = SubResource("TileSetAtlasSource_am2of")
 
 [node name="InsideHouse" type="Node2D"]
+script = ExtResource("1_4m3nm")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_i60ww")
@@ -1618,3 +1620,8 @@ layer_1/tile_data = PackedInt32Array(458758, 131076, 6, 458759, 196612, 6, 39322
 layer_2/name = "Items"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(196616, 262146, 6, 262152, 262146, 7, 196617, 327682, 6, 262153, 327682, 7, 196614, 6, 4, 262150, 6, 5, 196615, 65542, 4, 262151, 65542, 5, 393233, 131078, 2)
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="Any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(104, 136)

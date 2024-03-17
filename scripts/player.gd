@@ -54,10 +54,6 @@ func move():
 	if Input.is_action_just_pressed("left click") :
 		if have_equip_item :
 			action()
-		#currentHealth -= 20
-		#if currentHealth < 0 :
-			#currentHealth = 0
-		#healthChanged.emit()
 	
 	if Input.is_action_just_pressed("Planting") :
 		emit_signal("planting")

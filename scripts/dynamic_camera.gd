@@ -1,11 +1,14 @@
 extends Camera2D
 
+@export var follow_node : Node2D
+
 const MAX_DISTANCE = 48
 
 var target_distance = 0
 var center_pos = position
 
 func _process(delta):
+	global_position = follow_node.global_position
 	var direction = center_pos.direction_to(get_local_mouse_position())
 	var target_pos = center_pos + direction * target_distance
 	
