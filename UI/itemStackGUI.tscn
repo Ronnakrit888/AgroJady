@@ -12,14 +12,12 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_jej1w")
 
 [node name="item" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 6.0
-offset_right = 22.0
-offset_bottom = 20.0
+offset_right = 20.0
+offset_bottom = 14.0
+scale = Vector2(0.5, 0.5)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "99
 "

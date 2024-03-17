@@ -84,7 +84,6 @@ process_mode = 3
 script = ExtResource("7_j0wvi")
 
 [node name="Coins" parent="GUI" instance=ExtResource("8_a6e6y")]
-visible = false
 offset_left = 24.0
 offset_top = 584.0
 offset_right = -1004.0
@@ -92,50 +91,58 @@ offset_bottom = -19.0
 script = ExtResource("9_bdnvc")
 
 [node name="InventoryGUI" parent="GUI" instance=ExtResource("7_ssoyc")]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -107.5
-offset_top = -68.0
-offset_right = 107.5
-offset_bottom = 68.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -122.5
+offset_top = -78.0
+offset_right = 122.5
+offset_bottom = 78.0
 
 [node name="ShopGUI" parent="GUI" instance=ExtResource("11_xlxi7")]
 visible = false
 
 [node name="Hotbar" parent="GUI" instance=ExtResource("12_vmnwl")]
 anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -73.0
-offset_bottom = -18.0
+offset_left = -79.0
+offset_top = -38.0
+offset_right = 79.0
+offset_bottom = -12.0
+grow_horizontal = 2
 grow_vertical = 0
 
 [node name="HotbarSeed" parent="GUI" instance=ExtResource("13_7hbhp")]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -133.0
-offset_right = 24.0
-offset_bottom = -85.0
+offset_left = -14.0
+offset_top = -78.0
+offset_right = 14.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 
 [node name="SellZoneGUI" parent="GUI" instance=ExtResource("14_y2ptk")]
-visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -78.0
+offset_right = 122.5
+offset_bottom = 78.0
 
 [node name="HealthBar" type="TextureProgressBar" parent="GUI" node_paths=PackedStringArray("player")]
-visible = false
 custom_minimum_size = Vector2(48, 7)
 offset_left = 16.0
 offset_top = 16.0
@@ -166,14 +173,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DayNightCycleUI" parent="GUI" instance=ExtResource("19_uamut")]
-visible = false
 offset_left = 24.0
 offset_top = 72.0
 offset_right = 64.0
 offset_bottom = 112.0
 
 [node name="SeedShopGUI" parent="GUI" instance=ExtResource("22_g7jk7")]
-visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -78.0
+offset_right = 122.5
+offset_bottom = 78.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("18_8wxja")

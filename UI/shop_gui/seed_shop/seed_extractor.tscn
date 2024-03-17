@@ -1,15 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxx5celd5we6l"]
+[gd_scene load_steps=9 format=3 uid="uid://cxx5celd5we6l"]
 
 [ext_resource type="Script" path="res://UI/shop_gui/seed_shop/seed_extractor.gd" id="1_vpq8q"]
 [ext_resource type="PackedScene" uid="uid://dp3xlm0mr45ek" path="res://Plant/item_info.tscn" id="1_wxnpy"]
 [ext_resource type="Texture2D" uid="uid://bon8vor422q5l" path="res://UI/Cutted/images/buttons_68.png" id="2_k3ie5"]
-[ext_resource type="Resource" uid="uid://c0ydwt3yk662o" path="res://Plant/Scene and Data/tomato_scene_data.tres" id="2_obtq8"]
 [ext_resource type="Texture2D" uid="uid://beqeqq60q2ji8" path="res://UI/Cutted/images/buttons_70.png" id="3_0uii2"]
 [ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="4_6ltr2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c5a0h"]
 font = ExtResource("4_6ltr2")
-font_size = 48
 font_color = Color(1, 0.407843, 0.258824, 1)
 
 [sub_resource type="Animation" id="Animation_k1vmx"]
@@ -33,14 +31,13 @@ _data = {
 }
 
 [node name="SeedExtractor" type="HBoxContainer"]
-offset_right = 230.0
-offset_bottom = 52.0
+custom_minimum_size = Vector2(106, 29)
+offset_right = 106.0
+offset_bottom = 29.0
 script = ExtResource("1_vpq8q")
-seedItem = ExtResource("2_obtq8")
 
 [node name="Seed" parent="." instance=ExtResource("1_wxnpy")]
 layout_mode = 2
-stretch_mode = 4
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 2
@@ -52,9 +49,15 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureButton"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -22.0
+offset_right = 36.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "BUY"

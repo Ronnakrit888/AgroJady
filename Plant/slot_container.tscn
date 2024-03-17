@@ -5,20 +5,23 @@
 
 [node name="SlotContainer" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
 script = ExtResource("1_7sc7o")
 
 [node name="ItemInfo" parent="." instance=ExtResource("1_ham6g")]
 layout_mode = 2
 
 [node name="ButtonHolder" type="Control" parent="."]
+custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
 
 [node name="TextureButton" type="TextureButton" parent="ButtonHolder"]
+custom_minimum_size = Vector2(28, 28)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 28.0
+offset_bottom = 28.0
 focus_mode = 0
 
 [connection signal="button_down" from="ButtonHolder/TextureButton" to="." method="_on_texture_button_button_down"]

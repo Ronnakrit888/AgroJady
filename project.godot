@@ -22,7 +22,7 @@ Global="*res://scripts/Global.gd"
 
 [display]
 
-window/stretch/scale=2.0
+window/stretch/scale=3.0
 
 [input]
 

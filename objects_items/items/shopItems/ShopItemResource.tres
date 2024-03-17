@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://ccdd1rm5gqwbg" path="res://objects_items/items/shopItems/carbage_value.tres" id="2_8ovdv"]
 [ext_resource type="Resource" uid="uid://bmy82biddv4dd" path="res://objects_items/items/shopItems/carrot_value.tres" id="3_72oa8"]
 [ext_resource type="Resource" uid="uid://bck55aer503mi" path="res://objects_items/items/shopItems/corn_value.tres" id="4_1j0vf"]
-[ext_resource type="Resource" uid="uid://ctrck0dqtba1m" path="res://objects_items/items/shopItems/tomato_value.tres" id="5_bfv4n"]
+[ext_resource type="Resource" uid="uid://ctrck0dqtba1m" path="res://tomato_value.tres" id="5_bfv4n"]
 
 [resource]
 script = ExtResource("1_t4ll8")
