@@ -41,7 +41,6 @@ script = ExtResource("1_ygxe0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(560, 208)
-zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 drag_horizontal_enabled = true
@@ -85,6 +84,7 @@ process_mode = 3
 script = ExtResource("7_j0wvi")
 
 [node name="Coins" parent="GUI" instance=ExtResource("8_a6e6y")]
+visible = false
 offset_left = 24.0
 offset_top = 584.0
 offset_right = -1004.0
@@ -110,18 +110,14 @@ visible = false
 
 [node name="Hotbar" parent="GUI" instance=ExtResource("12_vmnwl")]
 anchors_preset = 7
-anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -145.5
-offset_top = -78.0
-offset_right = 145.5
-offset_bottom = -23.0
-grow_horizontal = 2
+offset_top = -73.0
+offset_bottom = -18.0
 grow_vertical = 0
 
 [node name="HotbarSeed" parent="GUI" instance=ExtResource("13_7hbhp")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -136,8 +132,10 @@ grow_vertical = 0
 size_flags_vertical = 8
 
 [node name="SellZoneGUI" parent="GUI" instance=ExtResource("14_y2ptk")]
+visible = false
 
 [node name="HealthBar" type="TextureProgressBar" parent="GUI" node_paths=PackedStringArray("player")]
+visible = false
 custom_minimum_size = Vector2(48, 7)
 offset_left = 16.0
 offset_top = 16.0
@@ -168,12 +166,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DayNightCycleUI" parent="GUI" instance=ExtResource("19_uamut")]
+visible = false
 offset_left = 24.0
 offset_top = 72.0
 offset_right = 64.0
 offset_bottom = 112.0
 
 [node name="SeedShopGUI" parent="GUI" instance=ExtResource("22_g7jk7")]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("18_8wxja")

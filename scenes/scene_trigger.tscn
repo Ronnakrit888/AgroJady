@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl8lnin5t4r0h"]
+
+[ext_resource type="Script" path="res://scripts/SceneTrigger.gd" id="1_ur08y"]
+
+[node name="SceneTrigger" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ur08y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
