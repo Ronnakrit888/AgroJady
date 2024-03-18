@@ -14,6 +14,7 @@ var plants : Dictionary = {}
 
 func _ready() :
 	super()
+	player.planting.connect(_on_player_planting)
 	canvas_modulate.time_tick.connect(day_time_ui.set_daytime)
 	grid_helper.visible = false
 	Global.seed_changed.connect(_on_seed_changed)
@@ -50,6 +51,7 @@ func _on_player_planting():
 			continue
 		
 		if tile.get_custom_data("Summer") :
+			print("Summer")
 			var plantCoord = tileMap.local_to_map(grid_helper.global_position)
 			if not plants.has(plantCoord) : 
 				if currentSeed.get_type() == "Summer":

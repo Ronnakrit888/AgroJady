@@ -31,8 +31,8 @@ func onSlotSelected(slot) :
 		return
 	
 func setEquipItem(item) :
-	if player :
-		hand_equip = player.find_child("HandEquip")
+	if scene_manager.player :
+		hand_equip = scene_manager.player.find_child("HandEquip")
 		if hand_equip :
 			hand_equip.equipped_item = item
 		else :

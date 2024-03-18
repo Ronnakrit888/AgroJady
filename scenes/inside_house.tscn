@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ce7ic3ty5tgek"]
+[gd_scene load_steps=18 format=3 uid="uid://ce7ic3ty5tgek"]
 
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_4m3nm"]
 [ext_resource type="Texture2D" uid="uid://bdt3b4e56pa31" path="res://tilemaps/Furniture/wall decorations.png" id="1_ld6r1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d0k4fynknek6g" path="res://tilemaps/walls and floors.png" id="5_s05ta"]
 [ext_resource type="Texture2D" uid="uid://dplu4ts8fk512" path="res://tilemaps/Furniture/bedroom.png" id="6_4se4b"]
 [ext_resource type="PackedScene" uid="uid://dl8lnin5t4r0h" path="res://scenes/scene_trigger.tscn" id="8_y3go5"]
+[ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/Player.tscn" id="9_pxbue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kji5u"]
 texture = ExtResource("1_ld6r1")
@@ -1637,3 +1638,5 @@ connected_scene = "world"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(104, 155.5)
 shape = SubResource("RectangleShape2D_shgrp")
+
+[node name="Player" parent="." instance=ExtResource("9_pxbue")]

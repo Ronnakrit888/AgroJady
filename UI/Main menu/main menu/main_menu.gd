@@ -6,8 +6,7 @@ extends Control
 @onready var exit_button = $MarginContainer/HBoxContainer/VBoxContainer/Exit_Button as Button
 @onready var settings_menu = $Settings_Menu as SettingsMenu
 @onready var margin_container = $MarginContainer as MarginContainer
-
-@export var start_level = preload("res://scenes/world.tscn") as PackedScene
+@onready var start_level = preload("res://scenes/world.tscn") as PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

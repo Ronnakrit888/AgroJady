@@ -212,9 +212,8 @@ debug_color = Color(0.462745, 0.054902, 0.0705882, 0.419608)
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
-[node name="InsideHouse" type="Marker2D" parent="EntranceMarkers"]
+[node name="inside_house" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(664, 208)
 
-[connection signal="planting" from="Player" to="." method="_on_player_planting"]
 [connection signal="closed" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_opened"]
