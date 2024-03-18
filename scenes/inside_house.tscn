@@ -1615,6 +1615,7 @@ size = Vector2(16, 9)
 script = ExtResource("1_4m3nm")
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_i60ww")
 format = 2
 layer_0/name = "BackGround"

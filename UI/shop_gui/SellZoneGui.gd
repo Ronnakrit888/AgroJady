@@ -28,6 +28,7 @@ func connectSlots():
 func onSlotSelected(slot) :
 	slot.takeItem()
 	
+	
 func open():
 	visible = true
 	isOpen = true

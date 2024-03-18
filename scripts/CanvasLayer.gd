@@ -2,14 +2,13 @@ extends CanvasLayer
 
 @onready var inventory = $InventoryGUI
 @onready var hotbar_seed = $HotbarSeed
-@onready var toolShop = $ShopGUI
 @onready var sellZone = $SellZoneGUI
 
 func _ready():
 	inventory.close()
 
 func _input(event):
-	if event.is_action_pressed("Inventory") && (!toolShop.isOpen || !sellZone.isOpen) :
+	if event.is_action_pressed("Inventory") && !sellZone.isOpen :
 		if inventory.isOpen:
 			inventory.close()
 			

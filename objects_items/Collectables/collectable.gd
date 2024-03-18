@@ -3,7 +3,17 @@ extends Area2D
 class_name Collectable
 
 @export var itemRes : Item
-var collect_position = 0
+@onready var collision_shape = $CollisionShape2D
+
+var launch_vel : Vector2 = Vector2.ZERO 
+var time_since_launch : float = 0.0
+var move_duration : float = 0.0
+var launching : bool = false :
+	set(is_launching) :
+		launching = is_launching
+		
+		#collision_shape.disabled = launching
+	
 
 func collect(inv : Inventory):
 	inv.insert(itemRes)
@@ -15,5 +25,17 @@ func collect(inv : Inventory):
 	tween.tween_callback(self.queue_free)
 
 
-func spawn(position):
-	collect_position = position
+func _process(delta):
+	if launching :
+		position += launch_vel * delta
+		time_since_launch += delta
+		
+		if time_since_launch >= move_duration :
+			launching = false
+
+func launch(velo : Vector2, duration : float) :
+	launch_vel = velo
+	move_duration = duration
+	time_since_launch = 0.0
+	launching = true
+	

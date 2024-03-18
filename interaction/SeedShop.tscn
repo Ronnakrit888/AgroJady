@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://pn4thxqf0dao"]
+
+[ext_resource type="Script" path="res://scripts/Sell_Zone.gd" id="1_sv2p6"]
+[ext_resource type="Texture2D" uid="uid://pk0ri76t80ev" path="res://SpriteSheets/VendingMachines.png" id="2_tbgj0"]
+[ext_resource type="PackedScene" uid="uid://c1pnyhes6l2pv" path="res://interaction/interaction_area.tscn" id="3_cm63e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l5j7"]
+atlas = ExtResource("2_tbgj0")
+region = Rect2(32, 8, 32, 48)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a38po"]
+radius = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6h4uw"]
+
+[node name="SeedShop" type="StaticBody2D"]
+position = Vector2(1, -10)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_sv2p6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_7l5j7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_a38po")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_cm63e")]
+action_name = "Buy Seed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 20)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6h4uw")
+debug_color = Color(0.254902, 0.627451, 0.294118, 0.419608)
+
+[connection signal="leave_area" from="InteractionArea" to="." method="_on_interaction_area_leave_area"]

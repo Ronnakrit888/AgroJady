@@ -24,18 +24,16 @@ func connectSlots():
 		slot.pressed.connect(callable)
 
 func onSlotSelected(slot) :
-	player.clicked = true
 	var item = inventory.slots[slot.get_index()].item
 	if (item is HarvestingTool) :
 		setEquipItem(item)
+	else :
 		return
-	
-	if (item is Item) :
-		return
-	
-	player.clicked = false
 	
 func setEquipItem(item) :
-	if (player) :
+	if player :
 		hand_equip = player.find_child("HandEquip")
-		hand_equip.equipped_item = item
+		if hand_equip :
+			hand_equip.equipped_item = item
+		else :
+			print("no hand equip")
