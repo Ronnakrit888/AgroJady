@@ -2,7 +2,6 @@ extends HBoxContainer
 
 @onready var inventory : Inventory = preload("res://UI/Inv.tres")
 @onready var slots : Array = get_children()
-@onready var player : Player = get_tree().get_first_node_in_group("player")
 
 var hand_equip : HandEquip
 

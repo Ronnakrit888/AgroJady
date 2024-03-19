@@ -1,15 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://bdtpfxxgt61wi"]
+[gd_scene load_steps=28 format=3 uid="uid://bdtpfxxgt61wi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y5533"]
-[ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/Player.tscn" id="2_p8ojd"]
+[ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p8ojd"]
 [ext_resource type="Script" path="res://scripts/dynamic_camera.gd" id="3_g7hr8"]
 [ext_resource type="PackedScene" uid="uid://dydmag1n6ramg" path="res://scenes/tile_map.tscn" id="4_u4t28"]
 [ext_resource type="PackedScene" uid="uid://b4uaoyqxem1w6" path="res://scenes/grid_helper.tscn" id="5_b4lqp"]
 [ext_resource type="PackedScene" uid="uid://73sdbwgnkuft" path="res://scenes/resourec_node/resource_node_tree.tscn" id="7_hohl0"]
 [ext_resource type="PackedScene" uid="uid://c4o4m0scee8bn" path="res://scenes/door.tscn" id="9_wpkki"]
 [ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="10_tqpsd"]
-[ext_resource type="PackedScene" uid="uid://cblb868wmi7u5" path="res://UI/coins.tscn" id="11_bx3pj"]
-[ext_resource type="Script" path="res://UI/coins.gd" id="12_raio2"]
 [ext_resource type="PackedScene" uid="uid://coe2tgc7sfe3x" path="res://UI/inventory_gui.tscn" id="13_7skpm"]
 [ext_resource type="PackedScene" uid="uid://ckrte5bskt18r" path="res://UI/Hotbar.tscn" id="15_mrmc4"]
 [ext_resource type="PackedScene" uid="uid://cwcx8pg876ddh" path="res://Plant/hotbar_seed.tscn" id="16_ypwxb"]
@@ -75,13 +73,6 @@ position = Vector2(1080, 633)
 [node name="GUI" type="CanvasLayer" parent="."]
 process_mode = 3
 script = ExtResource("10_tqpsd")
-
-[node name="Coins" parent="GUI" instance=ExtResource("11_bx3pj")]
-offset_left = 24.0
-offset_top = 584.0
-offset_right = -1004.0
-offset_bottom = -19.0
-script = ExtResource("12_raio2")
 
 [node name="InventoryGUI" parent="GUI" instance=ExtResource("13_7skpm")]
 anchors_preset = 8

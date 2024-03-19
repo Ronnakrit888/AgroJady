@@ -13,6 +13,5 @@ func _open_ui():
 	else:
 		sell_ui.open()
 
-
 func _on_interaction_area_leave_area():
 	sell_ui.close()
