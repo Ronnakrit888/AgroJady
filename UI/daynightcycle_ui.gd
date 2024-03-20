@@ -7,7 +7,6 @@ extends Control
 @onready var time_label: Label = %TimeLabel
 @onready var arrow: TextureRect = %Arrow
 
-
 func set_daytime(day: int, hour: int, minute: int) -> void:
 	day_label.text = "Day " + str(day + 1)
 	day_label_background.text = day_label.text

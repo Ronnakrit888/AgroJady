@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://s8k74qfuj5v5"]
+[gd_scene load_steps=21 format=3 uid="uid://s8k74qfuj5v5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_rq5be"]
 [ext_resource type="Resource" uid="uid://bj68gc064jcvt" path="res://UI/Inv.tres" id="2_fu3xu"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://5jmdhb762vu5" path="res://player/idle.png" id="4_03e5o"]
 [ext_resource type="Texture2D" uid="uid://cyypu4h7q6iyr" path="res://player/walk.png" id="5_iklsp"]
 [ext_resource type="Script" path="res://scripts/HandEquip.gd" id="6_lfsds"]
+[ext_resource type="Texture2D" uid="uid://duop20b7uf7vk" path="res://UI/Cutted/IMG_0280.PNG" id="7_dcjal"]
+[ext_resource type="Script" path="res://scenes/Lighting.gd" id="8_6nkqr"]
 
 [sub_resource type="Animation" id="Animation_jdni8"]
 length = 0.001
@@ -828,6 +830,11 @@ collision_mask = 65
 [node name="BodyArea" type="CollisionShape2D" parent="AreaDetect"]
 shape = SubResource("CircleShape2D_2htuy")
 debug_color = Color(0.454902, 0.596078, 0, 0.419608)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.372549, 0.176471, 0, 1)
+texture = ExtResource("7_dcjal")
+script = ExtResource("8_6nkqr")
 
 [connection signal="haveEquipItem" from="HandEquip" to="." method="_on_hand_equip_have_equip_item"]
 [connection signal="noEquipItem" from="HandEquip" to="." method="_on_hand_equip_no_equip_item"]
