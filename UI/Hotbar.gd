@@ -34,5 +34,5 @@ func setEquipItem(item) :
 		hand_equip = scene_manager.player.find_child("HandEquip")
 		if hand_equip :
 			hand_equip.equipped_item = item
-		else :
-			print("no hand equip")
+			return
+	

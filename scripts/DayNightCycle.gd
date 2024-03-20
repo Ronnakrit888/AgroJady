@@ -30,8 +30,7 @@ func _process(delta: float) -> void:
 
 		var value = (sin(time - PI / 2.0) + 1.0) / 2.0
 		self.color = gradient_texture.gradient.sample(value)
-	else :
-		print("not assign")
+		
 	_recalculate_time()	
 
 		
