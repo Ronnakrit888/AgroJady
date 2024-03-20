@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		self.color = gradient_texture.gradient.sample(value)
 		
 	_recalculate_time()	
-	print(Global.hour)
+	#print(Global.hour)
 
 		
 func _recalculate_time() -> void:

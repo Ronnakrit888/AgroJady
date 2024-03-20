@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bdtpfxxgt61wi"]
+[gd_scene load_steps=30 format=3 uid="uid://bdtpfxxgt61wi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y5533"]
 [ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p8ojd"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bcjpth6njqind" path="res://UI/Cutted/images/bars_17.png" id="19_i8fx1"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="20_1jcm6"]
 [ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="21_7hohi"]
+[ext_resource type="PackedScene" uid="uid://2agvwcsot75r" path="res://scenes/chest.tscn" id="22_0run8"]
 [ext_resource type="PackedScene" uid="uid://bos36urvquqkq" path="res://UI/shop_gui/seed_shop/seed_shop_gui.tscn" id="23_nmq3a"]
 [ext_resource type="PackedScene" uid="uid://b4mitotcubsj0" path="res://UI/daynightcycle_ui.tscn" id="23_yhcr7"]
 [ext_resource type="Script" path="res://scripts/DayNightCycle.gd" id="24_tacxu"]
@@ -185,6 +186,10 @@ grow_vertical = 1
 script = ExtResource("24_tacxu")
 gradient_texture = ExtResource("25_vfpyi")
 INGAME_SPEED = 80.0
+
+[node name="Chest" parent="." instance=ExtResource("22_0run8")]
+y_sort_enabled = false
+position = Vector2(504, 216)
 
 [node name="SellZone" parent="." instance=ExtResource("27_ag4oa")]
 position = Vector2(417, 82)
