@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdtpfxxgt61wi"]
+[gd_scene load_steps=29 format=3 uid="uid://bdtpfxxgt61wi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y5533"]
 [ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p8ojd"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cwcx8pg876ddh" path="res://Plant/hotbar_seed.tscn" id="16_ypwxb"]
 [ext_resource type="PackedScene" uid="uid://bkj8u037f5l43" path="res://UI/shop_gui/sell_zone_gui.tscn" id="17_78m6q"]
 [ext_resource type="Texture2D" uid="uid://djrxhc36clipn" path="res://UI/Cutted/images/bars_02.png" id="18_8rl70"]
+[ext_resource type="PackedScene" uid="uid://dummgpmxwpqha" path="res://UI/coins.tscn" id="19_5q0fv"]
 [ext_resource type="Texture2D" uid="uid://bcjpth6njqind" path="res://UI/Cutted/images/bars_17.png" id="19_i8fx1"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="20_1jcm6"]
 [ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="21_7hohi"]
@@ -73,6 +74,12 @@ position = Vector2(1080, 633)
 [node name="GUI" type="CanvasLayer" parent="."]
 process_mode = 3
 script = ExtResource("10_tqpsd")
+
+[node name="Coins" parent="GUI" instance=ExtResource("19_5q0fv")]
+offset_left = 24.0
+offset_top = 576.0
+offset_right = -1004.0
+offset_bottom = -24.0
 
 [node name="InventoryGUI" parent="GUI" instance=ExtResource("13_7skpm")]
 anchors_preset = 8

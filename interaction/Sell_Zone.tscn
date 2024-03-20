@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhykcev6fajsd"]
+[gd_scene load_steps=8 format=3 uid="uid://dhykcev6fajsd"]
 
 [ext_resource type="Script" path="res://scripts/Sell_Zone.gd" id="1_8rgmb"]
 [ext_resource type="Texture2D" uid="uid://qhl8erusetb" path="res://SpriteSheets/SodaMachines.png" id="1_tkpoy"]
@@ -12,6 +12,9 @@ region = Rect2(32, 72, 32, 48)
 radius = 8.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6h4uw"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a2tv5"]
+polygon = PackedVector2Array(-12, 17, -9, 20, 9, 20, 12, 17)
 
 [node name="SellZone" type="StaticBody2D"]
 position = Vector2(1, -10)
@@ -35,5 +38,8 @@ position = Vector2(0, 22)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6h4uw")
 debug_color = Color(0.254902, 0.627451, 0.294118, 0.419608)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_a2tv5")
 
 [connection signal="leave_area" from="InteractionArea" to="." method="_on_interaction_area_leave_area"]
