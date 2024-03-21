@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://2agvwcsot75r"]
+
+[ext_resource type="Texture2D" uid="uid://tfnfycqoy82u" path="res://SpriteSheets/spring and summer objects.png" id="1_2ob77"]
+[ext_resource type="Script" path="res://scripts/chest.gd" id="1_r832i"]
+[ext_resource type="PackedScene" uid="uid://c1pnyhes6l2pv" path="res://interaction/interaction_area.tscn" id="3_qh44n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfth0"]
+atlas = ExtResource("1_2ob77")
+region = Rect2(128, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8us4"]
+atlas = ExtResource("1_2ob77")
+region = Rect2(128, 192, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nw1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfth0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8us4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a5jfb"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvbwg"]
+radius = 9.0
+
+[node name="Chest" type="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(0, -2)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_r832i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3nw1d")
+frame = 1
+frame_progress = 0.421419
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_a5jfb")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_qh44n")]
+action_name = "Open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_cvbwg")
+debug_color = Color(0.00784314, 0.537255, 0.376471, 0.419608)
+
+[connection signal="leave_area" from="InteractionArea" to="." method="_on_interaction_area_leave_area"]

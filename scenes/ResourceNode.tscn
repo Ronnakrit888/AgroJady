@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb1fw2tjn5m8i"]
+
+[ext_resource type="Script" path="res://scripts/ResourceNode.gd" id="1_6kn0m"]
+
+[node name="ResourceNode" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 5
+collision_mask = 2
+script = ExtResource("1_6kn0m")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+animation = &""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)

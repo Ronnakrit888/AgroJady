@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ShopItemData" load_steps=3 format=3 uid="uid://bck55aer503mi"]
-
-[ext_resource type="Resource" uid="uid://da45l21grgstj" path="res://objects_items/items/items/corn.tres" id="1_1b3mp"]
-[ext_resource type="Script" path="res://objects_items/items/shopItems/ShopItemData.gd" id="2_gkqn2"]
-
-[resource]
-script = ExtResource("2_gkqn2")
-item = ExtResource("1_1b3mp")
-value = 20

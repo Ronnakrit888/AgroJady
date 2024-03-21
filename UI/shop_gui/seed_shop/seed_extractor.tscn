@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxx5celd5we6l"]
+
+[ext_resource type="Script" path="res://UI/shop_gui/seed_shop/seed_extractor.gd" id="1_vpq8q"]
+[ext_resource type="PackedScene" uid="uid://dp3xlm0mr45ek" path="res://Plant/item_info.tscn" id="1_wxnpy"]
+[ext_resource type="Texture2D" uid="uid://bon8vor422q5l" path="res://UI/assets/images/buttons_68.png" id="2_k3ie5"]
+[ext_resource type="Texture2D" uid="uid://beqeqq60q2ji8" path="res://UI/assets/images/buttons_70.png" id="3_0uii2"]
+[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Plant/Fonts/ThaleahFat.ttf" id="4_6ltr2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c5a0h"]
+font = ExtResource("4_6ltr2")
+font_color = Color(1, 0.407843, 0.258824, 1)
+
+[sub_resource type="Animation" id="Animation_k1vmx"]
+resource_name = "flash_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.654902, 0.0470588, 0.2, 1), Color(1, 1, 1, 1), Color(0.823529, 0, 0.00784314, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlpmo"]
+_data = {
+"flash_animation": SubResource("Animation_k1vmx")
+}
+
+[node name="SeedExtractor" type="HBoxContainer"]
+custom_minimum_size = Vector2(106, 29)
+offset_right = 106.0
+offset_bottom = 29.0
+script = ExtResource("1_vpq8q")
+
+[node name="Seed" parent="." instance=ExtResource("1_wxnpy")]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_k3ie5")
+texture_pressed = ExtResource("3_0uii2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -22.0
+offset_right = 36.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = SubResource("LabelSettings_c5a0h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="flash" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jlpmo")
+}
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

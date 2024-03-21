@@ -44,6 +44,9 @@ func update_animation():
 		previous_direct = direction
 		
 func move():
+	if DialogManager.is_dialog_active :
+		return
+		
 	input_movement = Input.get_vector("left", "right", "up", "down").normalized()
 	
 	if input_movement == Vector2.ZERO:
@@ -54,10 +57,6 @@ func move():
 	if Input.is_action_just_pressed("left click") :
 		if have_equip_item :
 			action()
-		#currentHealth -= 20
-		#if currentHealth < 0 :
-			#currentHealth = 0
-		#healthChanged.emit()
 	
 	if Input.is_action_just_pressed("Planting") :
 		emit_signal("planting")

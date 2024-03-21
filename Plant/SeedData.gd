@@ -28,3 +28,6 @@ func get_seed_name() -> String :
 	
 func get_type() -> String :
 	return plantItem.type
+	
+func get_value() -> int :
+	return plantItem.value

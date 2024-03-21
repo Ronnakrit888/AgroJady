@@ -1,28 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp3xlm0mr45ek"]
+[gd_scene load_steps=7 format=3 uid="uid://dp3xlm0mr45ek"]
 
-[ext_resource type="Texture2D" uid="uid://da45p4ploomgy" path="res://UI/Cutted/images/base_38.png" id="1_miske"]
+[ext_resource type="Texture2D" uid="uid://da45p4ploomgy" path="res://UI/assets/images/base_38.png" id="1_miske"]
 [ext_resource type="Script" path="res://Plant/item_info.gd" id="2_nduaq"]
-[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="3_nxkos"]
+[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Plant/Fonts/ThaleahFat.ttf" id="3_nxkos"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vypfd"]
 font = ExtResource("3_nxkos")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_oe4hj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/TextureRect/Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_8tafa"]
 resource_name = "flash"
@@ -43,47 +28,49 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gbj3f"]
 _data = {
-"RESET": SubResource("Animation_oe4hj"),
 "flash": SubResource("Animation_8tafa")
 }
 
 [node name="ItemInfo" type="TextureRect"]
-custom_minimum_size = Vector2(48, 48)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 28.0
+offset_bottom = 28.0
 texture = ExtResource("1_miske")
 script = ExtResource("2_nduaq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(28, 28)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="MarginContainer/TextureRect"]
+custom_minimum_size = Vector2(22, 15)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = -15.0
+offset_left = -13.0
+offset_top = -10.0
+offset_right = 9.0
+offset_bottom = 5.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "
-"
+scale = Vector2(0.6, 0.6)
 label_settings = SubResource("LabelSettings_vypfd")
 horizontal_alignment = 2
 vertical_alignment = 2

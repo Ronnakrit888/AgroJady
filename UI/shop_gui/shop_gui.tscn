@@ -1,11 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://pa7g1th4x476"]
+[gd_scene load_steps=8 format=3 uid="uid://pa7g1th4x476"]
 
 [ext_resource type="Script" path="res://UI/shop_gui/script/ShopGui.gd" id="1_lp8xy"]
-[ext_resource type="Texture2D" uid="uid://cm7hk3k8gkdat" path="res://UI/Cutted/GUI_02.png" id="2_4r378"]
-[ext_resource type="PackedScene" uid="uid://bc2sa8b2yg5le" path="res://UI/shop_gui/panel_shop_item.tscn" id="3_rety1"]
-[ext_resource type="Resource" uid="uid://bmogd7lvjnpn3" path="res://objects_items/items/ItemsCrafting/test_axe_shop.tres" id="4_duoeb"]
-[ext_resource type="Resource" uid="uid://bjc55oakj8m6r" path="res://objects_items/items/ItemsCrafting/test_pickaxe_shop.tres" id="5_iqsni"]
+[ext_resource type="Texture2D" uid="uid://cm7hk3k8gkdat" path="res://UI/assets/GUI_02.png" id="2_4r378"]
+[ext_resource type="PackedScene" path="res://UI/shop_gui/panel_shop_item.tscn" id="3_rety1"]
+[ext_resource type="Script" path="res://objects_items/items/shopItems/ShopItemData.gd" id="4_nxdfk"]
 [ext_resource type="Resource" uid="uid://c35babxny6axj" path="res://objects_items/items/ItemsCrafting/test_sword_shop.tres" id="6_1ft0k"]
+
+[sub_resource type="Resource" id="Resource_8sf2b"]
+script = ExtResource("4_nxdfk")
+value = 100
+
+[sub_resource type="Resource" id="Resource_gpds3"]
+script = ExtResource("4_nxdfk")
+value = 120
 
 [node name="toolShopGUI" type="Control"]
 layout_mode = 3
@@ -58,11 +65,11 @@ columns = 5
 
 [node name="PanelShopItem" parent="NinePatchRect/GridContainer" instance=ExtResource("3_rety1")]
 layout_mode = 2
-item = ExtResource("4_duoeb")
+item = SubResource("Resource_8sf2b")
 
 [node name="PanelShopItem2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_rety1")]
 layout_mode = 2
-item = ExtResource("5_iqsni")
+item = SubResource("Resource_gpds3")
 
 [node name="PanelShopItem3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_rety1")]
 layout_mode = 2

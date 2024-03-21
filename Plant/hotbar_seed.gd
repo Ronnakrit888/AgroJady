@@ -34,3 +34,7 @@ func is_slot_empty(seedData : PlantData) -> void :
 	for child in grid_container.get_children() :
 		if child.seedDataResource == seedData :
 			child.play_slot_item_empty()
+
+func update_inventory() -> void :
+	for child in grid_container.get_children() :
+		child.update_amount()

@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=3 uid="uid://ccx8jonejrn2q"]
+
+[ext_resource type="Script" path="res://scripts/Goblin.gd" id="1_6hm3n"]
+[ext_resource type="Texture2D" uid="uid://bfx5xoghj3nmp" path="res://SpriteSheets/Goblin/spr_idle_strip9.png" id="1_vvs1j"]
+[ext_resource type="PackedScene" uid="uid://c1pnyhes6l2pv" path="res://interaction/interaction_area.tscn" id="2_fghc6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o01vl"]
+atlas = ExtResource("1_vvs1j")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ggi8"]
+atlas = ExtResource("1_vvs1j")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tynl"]
+atlas = ExtResource("1_vvs1j")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tolvd"]
+atlas = ExtResource("1_vvs1j")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2p7m"]
+atlas = ExtResource("1_vvs1j")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmch1"]
+atlas = ExtResource("1_vvs1j")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhu0d"]
+atlas = ExtResource("1_vvs1j")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkxlr"]
+atlas = ExtResource("1_vvs1j")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fexdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o01vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ggi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tynl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tolvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2p7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmch1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhu0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkxlr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_arett"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ngf7"]
+radius = 18.1108
+
+[node name="Goblin" type="StaticBody2D"]
+position = Vector2(0, -3)
+script = ExtResource("1_6hm3n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fexdr")
+autoplay = "default"
+frame = 6
+frame_progress = 0.242109
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_arett")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_fghc6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_7ngf7")
+debug_color = Color(0, 0.631373, 0.45098, 0.419608)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ceokf14vq2654"]
 
 [ext_resource type="Script" path="res://objects_items/items/ItemsCrafting/RecipeSlot.gd" id="1_qwp7b"]
-[ext_resource type="Texture2D" uid="uid://buxkriojjhk7c" path="res://UI/Cutted/images/base_62.png" id="2_nv7w4"]
+[ext_resource type="Texture2D" uid="uid://buxkriojjhk7c" path="res://UI/assets/images/base_62.png" id="2_nv7w4"]
 
 [node name="SlotRecipe" type="Button"]
 self_modulate = Color(1, 1, 1, 0)

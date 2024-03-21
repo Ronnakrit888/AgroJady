@@ -10,7 +10,7 @@ class_name HarvestingTool
 # set for this tool, then the resource node will be harvested between the minimum and 
 # the maximum amount
 func interact_with_body(body):
-	if(body is ResourceNode):
+	if body is ResourceNode :
 		for type in effected_types:
 			if(body.node_types.has(type)):
 				print_debug("Match found at type " + type.display_name + " on " + body.name)

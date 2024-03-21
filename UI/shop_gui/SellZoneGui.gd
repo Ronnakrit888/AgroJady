@@ -2,10 +2,14 @@ extends Control
 
 class_name SellZoneGui
 
+signal opened
+signal closed
+
 @onready var inventory : Inventory = preload("res://UI/Inv.tres")
 @onready var slotsInventory : Array = $NinePatchRect/InventoryContainer.get_children()
 
 var isOpen : bool = false
+var itemInHand : ItemStackGUI
 
 func _ready():
 	connectSlots()
@@ -25,12 +29,14 @@ func connectSlots():
 		slot.pressed.connect(callable)
 
 func onSlotSelected(slot) :
-	var inventorySlot = inventory.slots[slot.get_index()]
+	slot.takeItem()
 	
 func open():
 	visible = true
 	isOpen = true
+	opened.emit()
 
 func close():
 	visible = false
 	isOpen = false
+	closed.emit()

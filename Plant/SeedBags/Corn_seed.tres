@@ -9,11 +9,11 @@ region = Rect2(144, 16, 16, 16)
 
 [resource]
 script = ExtResource("2_auafl")
-amount = 7
+amount = 5
 type = "Summer"
 display_name = "Corn Seed"
 icon = SubResource("AtlasTexture_2mbcg")
 maxAmountPrStack = 999
-value = 0
+value = 5
 rarity = "Common"
 description = ""

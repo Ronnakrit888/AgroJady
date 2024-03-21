@@ -2,29 +2,39 @@
 
 [ext_resource type="Script" path="res://UI/inventory_gui.gd" id="1_qk17d"]
 [ext_resource type="PackedScene" uid="uid://cd5y5uoteir7i" path="res://UI/slot_inv.tscn" id="2_8rdhe"]
-[ext_resource type="Texture2D" uid="uid://cm7hk3k8gkdat" path="res://UI/Cutted/GUI_02.png" id="2_58l0r"]
+[ext_resource type="Texture2D" uid="uid://cm7hk3k8gkdat" path="res://UI/assets/GUI_02.png" id="2_58l0r"]
 
 [node name="InventoryGUI" type="Control"]
-custom_minimum_size = Vector2(477, 305)
+custom_minimum_size = Vector2(245, 156)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 477.0
-offset_bottom = 305.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -907.0
+offset_bottom = -492.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_qk17d")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(245, 156)
 layout_mode = 0
-offset_right = 476.0
-offset_bottom = 303.0
+offset_right = 245.0
+offset_bottom = 156.0
 texture = ExtResource("2_58l0r")
 region_rect = Rect2(0, 0, 48, 32)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 92.5
-offset_top = 65.0
-offset_right = 383.5
-offset_bottom = 120.0
+custom_minimum_size = Vector2(146, 26)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_top = 35.0
+offset_right = 73.0
+offset_bottom = 61.0
+grow_horizontal = 2
 
 [node name="SlotInv" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_8rdhe")]
 layout_mode = 2
@@ -42,16 +52,17 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="InventoryContainer" type="GridContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(146, 56)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -145.5
-offset_top = -16.5
-offset_right = 145.5
-offset_bottom = 97.5
+offset_left = -73.0
+offset_top = -8.0
+offset_right = 73.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 5

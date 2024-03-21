@@ -9,7 +9,8 @@ var inventorySlot : InventorySlot
 
 func update():
 	
-	if !inventorySlot || !inventorySlot.item : return
+	if !inventorySlot || !inventorySlot.item : 
+		return
 	
 	itemSprite.visible = true
 	itemSprite.texture = inventorySlot.item.icon 
@@ -17,7 +18,12 @@ func update():
 	if inventorySlot.amount > 1:
 		amountLabel.visible = true
 		amountLabel.text = str(inventorySlot.amount)
-	else:
+	elif inventorySlot.amount == 1 :
 		amountLabel.visible = false
+	else :
+		amountLabel.visible = false
+		itemSprite.visible = false
+		inventorySlot.item = null
+		inventorySlot = null
 
 
