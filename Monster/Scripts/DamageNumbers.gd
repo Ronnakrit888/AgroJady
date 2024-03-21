@@ -1,5 +1,7 @@
 extends Node
 
+@onready var font = preload("res://Plant/Fonts/ThaleahFat.ttf")
+
 func display_number(value : int, position : Vector2, is_critical : bool):
 	var number = Label.new()
 	number.global_position = position
@@ -17,6 +19,7 @@ func display_number(value : int, position : Vector2, is_critical : bool):
 	number.label_settings.font_size = 18
 	number.label_settings.outline_color = "#000"
 	number.label_settings.outline_size = 1
+	number.label_settings.font = font
 	
 	call_deferred("add_child", number)
 	

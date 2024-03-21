@@ -32,6 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://bwi07h1j4nqxi" path="res://Monster/Texture/enemy skeleton/skeleton_walk/1c2f0ed3-c677-42df-89eb-75e2857a22a1.png" id="26_0hqet"]
 [ext_resource type="Texture2D" uid="uid://b1thriel5sedf" path="res://Monster/Texture/enemy skeleton/skeleton_walk/8f5a8341-40a6-42de-990f-cc2640409d6a.png" id="27_bal3a"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ut0fu"]
+radius = 4.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_af87u"]
 animations = [{
 "frames": [{
@@ -169,9 +172,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_lsmlk"]
 radius = 46.0109
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ut0fu"]
-radius = 4.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_pkh8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrwi7"]
@@ -179,31 +179,33 @@ size = Vector2(9.5, 19)
 
 [node name="enemy" type="CharacterBody2D"]
 y_sort_enabled = true
-position = Vector2(0, -3)
-collision_layer = 69
+position = Vector2(0, -4)
+collision_layer = 64
 collision_mask = 71
 script = ExtResource("1_0ifg1")
 types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_7opxp")])
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_af87u")
-animation = &"death"
-
-[node name="detetion_area" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detetion_area"]
-shape = SubResource("CircleShape2D_lsmlk")
-debug_color = Color(0.560784, 0.14902, 0.227451, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
 shape = SubResource("CircleShape2D_ut0fu")
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_af87u")
+animation = &"jump"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="detetion_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="detect_shape" type="CollisionShape2D" parent="detetion_area"]
+shape = SubResource("CircleShape2D_lsmlk")
+debug_color = Color(0.560784, 0.14902, 0.227451, 0.419608)
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="hitbox_shape" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("CircleShape2D_pkh8x")
 
 [node name="DamageNumberOrigin" type="Node2D" parent="."]
@@ -211,10 +213,13 @@ position = Vector2(0, -13)
 
 [node name="attackPoint" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attackPoint"]
+[node name="attack_shape" type="CollisionShape2D" parent="attackPoint"]
 position = Vector2(13.25, 0.5)
 shape = SubResource("RectangleShape2D_lrwi7")
 debug_color = Color(0.956863, 0, 0.52549, 0.419608)
+
+[node name="Popup" type="Node2D" parent="."]
+position = Vector2(0, -13)
 
 [connection signal="body_entered" from="detetion_area" to="." method="_on_detetion_area_body_entered"]
 [connection signal="body_exited" from="detetion_area" to="." method="_on_detetion_area_body_exited"]

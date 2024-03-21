@@ -8,10 +8,9 @@
 [resource]
 script = ExtResource("2_8u5pu")
 effected_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("1_2nphk")])
-min_amount = 1
-max_amount = 1
+min_amount = 3
+max_amount = 8
 type = "Weapon"
-damage = 12
 display_name = "Basic sword"
 icon = ExtResource("1_7e6qg")
 texture = ExtResource("3_24tiq")
