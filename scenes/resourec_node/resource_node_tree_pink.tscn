@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://db5lxndek8v70"]
+
+[ext_resource type="PackedScene" uid="uid://cb1fw2tjn5m8i" path="res://scenes/ResourceNode.tscn" id="1_e8i0w"]
+[ext_resource type="Resource" uid="uid://csw5cbb0ba5hh" path="res://objects_items/Resources/ResourceType/cutable.tres" id="2_dhuci"]
+[ext_resource type="PackedScene" uid="uid://bv7c70kq6uhpn" path="res://objects_items/Collectables/black_pink_wood.tscn" id="3_kjep6"]
+[ext_resource type="Texture2D" uid="uid://cdnrhtlmm167w" path="res://UI/assets/trees/BlackPinkTree.PNG" id="4_xppuf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmh6c"]
+atlas = ExtResource("4_xppuf")
+region = Rect2(32, 390, 32, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u20cc"]
+atlas = ExtResource("4_xppuf")
+region = Rect2(64, 390, 32, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vihwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmh6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u20cc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vt8e7"]
+radius = 5.0
+
+[node name="ResourceNodeTreePink" instance=ExtResource("1_e8i0w")]
+node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_dhuci")])
+node_name = "Summer"
+pickup_type = ExtResource("3_kjep6")
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_vihwp")
+animation = &"default"
+autoplay = "default"
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_vt8e7")

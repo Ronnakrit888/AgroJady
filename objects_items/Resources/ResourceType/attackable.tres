@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ResourceNodeType" load_steps=2 format=3 uid="uid://cp136qoufb3ee"]
+
+[ext_resource type="Script" path="res://objects_items/Resources/ResourceType/resource_node_type.gd" id="1_v4evp"]
+
+[resource]
+script = ExtResource("1_v4evp")
+display_name = "attackable"

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfuwsl2f66yf"]
+
+[ext_resource type="PackedScene" uid="uid://cb1fw2tjn5m8i" path="res://scenes/ResourceNode.tscn" id="1_rp6u6"]
+[ext_resource type="Resource" uid="uid://csw5cbb0ba5hh" path="res://objects_items/Resources/ResourceType/cutable.tres" id="2_wfclt"]
+[ext_resource type="Texture2D" uid="uid://bsr5rhl4ilnsr" path="res://UI/assets/trees/PinkTree.PNG" id="4_umc6g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kq3f"]
+atlas = ExtResource("4_umc6g")
+region = Rect2(32, 390, 32, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80dw0"]
+atlas = ExtResource("4_umc6g")
+region = Rect2(64, 390, 32, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4y6fy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kq3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80dw0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="ResourceNodeTreePink2" instance=ExtResource("1_rp6u6")]
+node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_wfclt")])
+node_name = "PinkaTree"
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_4y6fy")
+animation = &"default"
+autoplay = "default"

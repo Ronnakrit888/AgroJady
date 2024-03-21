@@ -827,6 +827,8 @@ hframes = 10
 script = ExtResource("6_lfsds")
 
 [node name="Area2D" type="Area2D" parent="HandEquip"]
+collision_layer = 0
+collision_mask = 69
 
 [node name="tool" type="CollisionShape2D" parent="HandEquip/Area2D"]
 visible = false
@@ -836,7 +838,9 @@ disabled = true
 debug_color = Color(0.905882, 0, 0.74902, 0.419608)
 
 [node name="AreaDetect" type="Area2D" parent="."]
-collision_mask = 65
+rotation = 0.00657373
+collision_layer = 2
+collision_mask = 67
 
 [node name="BodyArea" type="CollisionShape2D" parent="AreaDetect"]
 shape = SubResource("CircleShape2D_2htuy")

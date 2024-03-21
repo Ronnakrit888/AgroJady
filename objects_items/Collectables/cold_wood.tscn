@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bko1jijejb3jq"]
+
+[ext_resource type="PackedScene" uid="uid://cljr6vwgxjt66" path="res://objects_items/Collectables/collectable.tscn" id="1_p67u5"]
+[ext_resource type="Resource" uid="uid://cvc468e2kofol" path="res://objects_items/items/items/cold_wood.tres" id="2_mtysj"]
+[ext_resource type="Texture2D" uid="uid://b457fvjyexgyg" path="res://UI/assets/trees/collects/tree5.PNG" id="3_csdet"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjy65"]
+radius = 7.0
+
+[node name="Collectables" instance=ExtResource("1_p67u5")]
+itemRes = ExtResource("2_mtysj")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_csdet")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_qjy65")

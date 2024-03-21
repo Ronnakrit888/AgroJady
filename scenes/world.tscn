@@ -5,8 +5,7 @@
 [ext_resource type="Script" path="res://scripts/dynamic_camera.gd" id="3_g7hr8"]
 [ext_resource type="PackedScene" uid="uid://dydmag1n6ramg" path="res://scenes/tile_map.tscn" id="4_u4t28"]
 [ext_resource type="PackedScene" uid="uid://b4uaoyqxem1w6" path="res://scenes/grid_helper.tscn" id="5_b4lqp"]
-[ext_resource type="PackedScene" uid="uid://73sdbwgnkuft" path="res://scenes/resourec_node/resource_node_tree.tscn" id="7_hohl0"]
-[ext_resource type="PackedScene" uid="uid://c4o4m0scee8bn" path="res://scenes/door.tscn" id="9_wpkki"]
+[ext_resource type="Script" path="res://scripts/WorldObjects.gd" id="6_38iq5"]
 [ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="10_tqpsd"]
 [ext_resource type="PackedScene" uid="uid://coe2tgc7sfe3x" path="res://UI/inventory_gui.tscn" id="13_7skpm"]
 [ext_resource type="Texture2D" uid="uid://djrxhc36clipn" path="res://UI/assets/images/bars_02.png" id="13_h1jnb"]
@@ -28,6 +27,7 @@
 [ext_resource type="Script" path="res://scripts/Shop.gd" id="26_k6o1s"]
 [ext_resource type="PackedScene" uid="uid://dhykcev6fajsd" path="res://interaction/Sell_Zone.tscn" id="27_ag4oa"]
 [ext_resource type="PackedScene" uid="uid://1hdis8mylhni" path="res://Monster/Scenes/enemy.tscn" id="28_bm0fs"]
+[ext_resource type="Script" path="res://scripts/EnemySpawner.gd" id="29_h8vwf"]
 [ext_resource type="PackedScene" uid="uid://dl8lnin5t4r0h" path="res://scenes/scene_trigger.tscn" id="30_vlww1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t0jvi"]
@@ -77,12 +77,63 @@ position = Vector2(96, -144)
 [node name="WorldObjects" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(-463, -547)
+script = ExtResource("6_38iq5")
 
-[node name="Door" parent="WorldObjects" instance=ExtResource("9_wpkki")]
-position = Vector2(1127, 740)
+[node name="Summer" type="Node2D" parent="WorldObjects"]
 
-[node name="ResourceNodeTree" parent="WorldObjects" instance=ExtResource("7_hohl0")]
-position = Vector2(1080, 633)
+[node name="mark1" type="Marker2D" parent="WorldObjects/Summer"]
+position = Vector2(1335, 627)
+
+[node name="mark2" type="Marker2D" parent="WorldObjects/Summer"]
+position = Vector2(1375, 627)
+
+[node name="mark3" type="Marker2D" parent="WorldObjects/Summer"]
+position = Vector2(1351, 659)
+
+[node name="mark4" type="Marker2D" parent="WorldObjects/Summer"]
+position = Vector2(1295, 603)
+
+[node name="Spring" type="Node2D" parent="WorldObjects"]
+
+[node name="mark1" type="Marker2D" parent="WorldObjects/Spring"]
+position = Vector2(785, 677)
+
+[node name="mark2" type="Marker2D" parent="WorldObjects/Spring"]
+position = Vector2(713, 685)
+
+[node name="mark3" type="Marker2D" parent="WorldObjects/Spring"]
+position = Vector2(737, 725)
+
+[node name="mark4" type="Marker2D" parent="WorldObjects/Spring"]
+position = Vector2(785, 725)
+
+[node name="Winter" type="Node2D" parent="WorldObjects"]
+
+[node name="mark1" type="Marker2D" parent="WorldObjects/Winter"]
+position = Vector2(1329, 869)
+
+[node name="mark2" type="Marker2D" parent="WorldObjects/Winter"]
+position = Vector2(1241, 877)
+
+[node name="mark3" type="Marker2D" parent="WorldObjects/Winter"]
+position = Vector2(1385, 757)
+
+[node name="mark4" type="Marker2D" parent="WorldObjects/Winter"]
+position = Vector2(1313, 789)
+
+[node name="Autumn" type="Node2D" parent="WorldObjects"]
+
+[node name="mark1" type="Marker2D" parent="WorldObjects/Autumn"]
+position = Vector2(697, 821)
+
+[node name="mark2" type="Marker2D" parent="WorldObjects/Autumn"]
+position = Vector2(633, 861)
+
+[node name="mark3" type="Marker2D" parent="WorldObjects/Autumn"]
+position = Vector2(713, 941)
+
+[node name="mark4" type="Marker2D" parent="WorldObjects/Autumn"]
+position = Vector2(753, 869)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -208,7 +259,7 @@ vertical_alignment = 1
 [node name="DayNight" type="CanvasModulate" parent="."]
 script = ExtResource("24_tacxu")
 gradient_texture = ExtResource("25_vfpyi")
-INGAME_SPEED = 80.0
+INGAME_SPEED = 40.0
 
 [node name="Goblin" parent="." instance=ExtResource("23_tc8xk")]
 position = Vector2(720, 184)
@@ -243,6 +294,20 @@ debug_color = Color(0.462745, 0.054902, 0.0705882, 0.419608)
 
 [node name="inside_house" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(664, 208)
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("29_h8vwf")
+
+[node name="marker1" type="Marker2D" parent="EnemySpawner"]
+position = Vector2(371, 221)
+
+[node name="marker2" type="Marker2D" parent="EnemySpawner"]
+position = Vector2(601, 66)
+
+[node name="marker3" type="Marker2D" parent="EnemySpawner"]
+position = Vector2(738, 325)
+
+[node name="Enemy" type="Node2D" parent="EnemySpawner"]
 
 [connection signal="closed" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_opened"]

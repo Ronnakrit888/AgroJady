@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SeasonType" load_steps=2 format=3 uid="uid://csgft81rye45k"]
+
+[ext_resource type="Script" path="res://objects_items/scripts/SeasonType.gd" id="1_rgqia"]
+
+[resource]
+script = ExtResource("1_rgqia")
+name = "Summer"
