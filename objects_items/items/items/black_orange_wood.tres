@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://da6foqhy073ig"]
+
+[ext_resource type="Texture2D" uid="uid://crm3lucuw3o8m" path="res://UI/assets/trees/collects/tree3.PNG" id="1_ip5ct"]
+[ext_resource type="Script" path="res://objects_items/scripts/Item.gd" id="2_a3gy5"]
+
+[resource]
+script = ExtResource("2_a3gy5")
+display_name = "Black Orange Wood"
+icon = ExtResource("1_ip5ct")
+maxAmountPrStack = 99
+value = 1
+rarity = "Common"
+description = ""

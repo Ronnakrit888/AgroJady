@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dt67dxqks0613"]
+
+[ext_resource type="Texture2D" uid="uid://nmik6ddhxuk8" path="res://UI/assets/trees/collects/tree2.PNG" id="1_grraf"]
+[ext_resource type="Script" path="res://objects_items/scripts/Item.gd" id="2_m7fd8"]
+
+[resource]
+script = ExtResource("2_m7fd8")
+display_name = "BlackPinkWood"
+icon = ExtResource("1_grraf")
+maxAmountPrStack = 99
+value = 1
+rarity = "Rare"
+description = ""

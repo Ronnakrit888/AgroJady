@@ -33,8 +33,7 @@ radius = 6.0
 [node name="ResourceNodeTree" instance=ExtResource("1_du17h")]
 position = Vector2(0, -7)
 node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_sbtl8")])
-node_name = "Normal Tree"
-starting_resource = 5
+node_name = "Summer"
 pickup_type = ExtResource("3_sb6dg")
 
 [node name="AnimatedSprite" parent="." index="0"]

@@ -95,44 +95,44 @@ position = Vector2(1295, 603)
 [node name="Spring" type="Node2D" parent="WorldObjects"]
 
 [node name="mark1" type="Marker2D" parent="WorldObjects/Spring"]
-position = Vector2(313, 1125)
+position = Vector2(785, 677)
 
 [node name="mark2" type="Marker2D" parent="WorldObjects/Spring"]
-position = Vector2(241, 1133)
+position = Vector2(713, 685)
 
 [node name="mark3" type="Marker2D" parent="WorldObjects/Spring"]
-position = Vector2(265, 1173)
+position = Vector2(737, 725)
 
 [node name="mark4" type="Marker2D" parent="WorldObjects/Spring"]
-position = Vector2(313, 1173)
+position = Vector2(785, 725)
 
 [node name="Winter" type="Node2D" parent="WorldObjects"]
 
 [node name="mark1" type="Marker2D" parent="WorldObjects/Winter"]
-position = Vector2(1767, 579)
+position = Vector2(1329, 869)
 
 [node name="mark2" type="Marker2D" parent="WorldObjects/Winter"]
-position = Vector2(1679, 587)
+position = Vector2(1241, 877)
 
 [node name="mark3" type="Marker2D" parent="WorldObjects/Winter"]
-position = Vector2(1823, 467)
+position = Vector2(1385, 757)
 
 [node name="mark4" type="Marker2D" parent="WorldObjects/Winter"]
-position = Vector2(1751, 499)
+position = Vector2(1313, 789)
 
 [node name="Autumn" type="Node2D" parent="WorldObjects"]
 
 [node name="mark1" type="Marker2D" parent="WorldObjects/Autumn"]
-position = Vector2(1559, 1019)
+position = Vector2(697, 821)
 
 [node name="mark2" type="Marker2D" parent="WorldObjects/Autumn"]
-position = Vector2(1495, 1059)
+position = Vector2(633, 861)
 
 [node name="mark3" type="Marker2D" parent="WorldObjects/Autumn"]
-position = Vector2(1575, 1139)
+position = Vector2(713, 941)
 
 [node name="mark4" type="Marker2D" parent="WorldObjects/Autumn"]
-position = Vector2(1615, 1067)
+position = Vector2(753, 869)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 process_mode = 3

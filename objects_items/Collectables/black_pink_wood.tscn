@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv7c70kq6uhpn"]
+
+[ext_resource type="PackedScene" uid="uid://cljr6vwgxjt66" path="res://objects_items/Collectables/collectable.tscn" id="1_6sibj"]
+[ext_resource type="Resource" uid="uid://dt67dxqks0613" path="res://objects_items/items/items/black_pink_wood.tres" id="2_niq7u"]
+[ext_resource type="Texture2D" uid="uid://nmik6ddhxuk8" path="res://UI/assets/trees/collects/tree2.PNG" id="3_2qvv0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gsjy"]
+radius = 7.07107
+
+[node name="Collectables" instance=ExtResource("1_6sibj")]
+itemRes = ExtResource("2_niq7u")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_2qvv0")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_1gsjy")
