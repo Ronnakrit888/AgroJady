@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://s8k74qfuj5v5"]
+[gd_scene load_steps=23 format=3 uid="uid://s8k74qfuj5v5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_rq5be"]
 [ext_resource type="Resource" uid="uid://bj68gc064jcvt" path="res://UI/Inv.tres" id="2_fu3xu"]
+[ext_resource type="Texture2D" uid="uid://cgkwm4g4dsxcp" path="res://UI/assets/shadow.png" id="3_he2cd"]
 [ext_resource type="Texture2D" uid="uid://qx2eq1htbg1e" path="res://player/axe.png" id="3_syjek"]
 [ext_resource type="Texture2D" uid="uid://5jmdhb762vu5" path="res://player/idle.png" id="4_03e5o"]
 [ext_resource type="Texture2D" uid="uid://cyypu4h7q6iyr" path="res://player/walk.png" id="5_iklsp"]
@@ -797,6 +798,12 @@ script = ExtResource("1_rq5be")
 speed = 70.0
 inventory = ExtResource("2_fu3xu")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 8)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_he2cd")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
 texture = ExtResource("3_syjek")
@@ -809,6 +816,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, 8)
 shape = SubResource("RectangleShape2D_wsui4")
 
