@@ -21,6 +21,4 @@ func _on_area_2d_body_entered(body):
 	if equipped_item.has_method("interact_with_body"):
 		equipped_item.interact_with_body(body)
 		
-	for child in body.get_children() :
-		if child is Damageable :
-			child.hit(equipped_item.damage)
+	

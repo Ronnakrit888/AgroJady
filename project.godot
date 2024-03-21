@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 InteractionManager="*res://interaction/InteractionManager.tscn"
 Global="*res://scripts/Global.gd"
+DamageNumbers="*res://scripts/DamageNumbers.gd"
 
 [input]
 

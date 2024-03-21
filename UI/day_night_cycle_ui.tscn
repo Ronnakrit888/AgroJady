@@ -55,6 +55,7 @@ offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_5n72m")
 
 [node name="Label" type="Label" parent="Time/TimeLabel"]
+layout_mode = 0
 offset_top = 18.0
 offset_right = 40.0
 offset_bottom = 33.0

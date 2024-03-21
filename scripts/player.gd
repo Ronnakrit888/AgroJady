@@ -5,6 +5,7 @@ class_name Player
 signal planting
 signal healthChanged
 
+
 @export var speed : float = 100.0
 @export var inventory : Inventory
 @export var maxHealth : float = 500
@@ -19,6 +20,7 @@ var mouseLocFromPlayer = null
 var have_equip_item : bool = false
 var clicked : bool = false
 var enemy_inattack_range : bool = false
+
 
 func player() :
 	return
@@ -69,13 +71,18 @@ func action():
 	is_action = true
 	await animation.animation_finished
 	is_action = false
+	
 
 func _on_area_detect_area_entered(area):
 	if area.has_method("collect"):
 		area.collect(inventory)
+	
 	
 func _on_hand_equip_have_equip_item():
 	have_equip_item = true
 
 func _on_hand_equip_no_equip_item():
 	have_equip_item = false
+
+
+

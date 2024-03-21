@@ -794,9 +794,10 @@ inventory = ExtResource("2_3kxq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
-texture = ExtResource("4_4kpu7")
+texture = ExtResource("2_cj37f")
 flip_h = true
-hframes = 10
+hframes = 9
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -804,13 +805,15 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 8)
+position = Vector2(-1, 8)
 shape = SubResource("RectangleShape2D_wsui4")
 
 [node name="HandEquip" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 flip_h = true
 hframes = 10
+frame = 9
 script = ExtResource("8_oppeu")
 
 [node name="Area2D" type="Area2D" parent="HandEquip"]
@@ -833,3 +836,4 @@ debug_color = Color(0.454902, 0.596078, 0, 0.419608)
 [connection signal="noEquipItem" from="HandEquip" to="." method="_on_hand_equip_no_equip_item"]
 [connection signal="body_entered" from="HandEquip/Area2D" to="HandEquip" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="AreaDetect" to="." method="_on_area_detect_area_entered"]
+[connection signal="area_exited" from="AreaDetect" to="." method="_on_area_detect_area_exited"]

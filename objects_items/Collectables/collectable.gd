@@ -11,3 +11,5 @@ func collect(inv : Inventory):
 
 func spawn(position):
 	collect_position = position
+
+

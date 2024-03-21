@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5xvvud3ux55d"]
+
+[ext_resource type="PackedScene" uid="uid://cljr6vwgxjt66" path="res://objects_items/Collectables/collectable.tscn" id="1_v8136"]
+[ext_resource type="Texture2D" uid="uid://b6ncqy2fpl1aa" path="res://Monster/Texture/enemy skeleton/skeleton_death/01a38089-62e2-4f3a-896e-e312e07b39b6.png" id="2_o4l23"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7exo"]
+resource_local_to_scene = true
+radius = 7.0
+
+[node name="Collectables" instance=ExtResource("1_v8136")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_o4l23")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_c7exo")

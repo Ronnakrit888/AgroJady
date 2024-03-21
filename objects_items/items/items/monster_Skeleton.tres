@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cl3moromky2d7"]
+
+[ext_resource type="Texture2D" uid="uid://b6ncqy2fpl1aa" path="res://Monster/Texture/enemy skeleton/skeleton_death/01a38089-62e2-4f3a-896e-e312e07b39b6.png" id="1_iqshe"]
+[ext_resource type="Script" path="res://objects_items/scripts/Item.gd" id="2_81ufl"]
+
+[resource]
+script = ExtResource("2_81ufl")
+display_name = "Monster"
+icon = ExtResource("1_iqshe")
+maxAmountPrStack = 15
+value = 0
+rarity = "Common"
+description = ""

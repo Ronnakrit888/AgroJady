@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcywhexlnlhi4"]
+
+[ext_resource type="Texture2D" uid="uid://b6ncqy2fpl1aa" path="res://Monster/Texture/enemy skeleton/skeleton_death/01a38089-62e2-4f3a-896e-e312e07b39b6.png" id="1_syxt5"]
+
+[node name="enemy_collectable" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_syxt5")

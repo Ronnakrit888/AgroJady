@@ -6,18 +6,27 @@ extends Node2D
 @onready var grid_helper = $TileMap/GridHelper
 @onready var gui = $GUI
 @onready var day_time_ui = $GUI/DayNightCycleUI
+#@onready var enemy_scene = preload("res://Monster/Scenes/enemy.tscn")
+
+
 
 var currentSeed : PlantData
+var enemy_instance: Node2D
 
 const GRID_SIZE = 16
 
 var plants : Dictionary = {}
 
 func _ready() :
+	
 	canvas_modulate.time_tick.connect(day_time_ui.set_daytime)
 	grid_helper.visible = false
 	Global.seed_changed.connect(_on_seed_changed)
 	gui.setup_hotbar_seed()
+	#enemy_instance = enemy.instance()
+	#_enemy_spawn()
+	
+
 	
 func _on_inventory_gui_closed():
 	get_tree().paused = false
@@ -26,6 +35,8 @@ func _on_inventory_gui_opened():
 	get_tree().paused = true
 	
 func _physics_process(_delta):
+	
+	
 	var playerMapCoord = tileMap.local_to_map(player.position)
 	var mouse_position = Vector2i(get_global_mouse_position() / GRID_SIZE ) * GRID_SIZE
 	grid_helper.position = playerMapCoord * GRID_SIZE
@@ -39,6 +50,8 @@ func _physics_process(_delta):
 		
 	if tile.get_custom_data("HoedLand") :
 		grid_helper.visible = true
+		
+
 
 func _on_player_planting():
 	var cellLocalCoord = tileMap.local_to_map(grid_helper.position)
@@ -81,3 +94,18 @@ func _plant_seed(coord) -> void :
 func _on_seed_changed(new_seed) -> void : 
 	currentSeed = new_seed
 
+#func _enemy_spawn():
+	#if day_time_ui.has_method("get_hour"):
+		#var hour = day_time_ui.get_hour()
+		#if hour == 5 and enemy_instance != null:
+			#enemy_instance.queue_free()
+		#elif hour == 20 and enemy_instance == null:
+			#enemy_instance = enemy.instance()
+			#get_node("Monster").add_child(enemy_instance)
+
+
+
+#func _on_timer_timeout():
+	#var enemy = enemy_scene.instantiate()
+	#add_child(enemy)
+	#print("1")
