@@ -21,6 +21,7 @@ InteractionManager="*res://interaction/InteractionManager.tscn"
 Global="*res://scripts/Global.gd"
 scene_manager="*res://scripts/scene_manager.gd"
 DialogManager="*res://scripts/DialogManager.gd"
+DamageNumbers="*res://Monster/Scripts/DamageNumbers.gd"
 
 [display]
 

@@ -17,9 +17,9 @@ var spawned_counts = {
 
 func _ready():
 	for marker_name in tree_scenes.keys():
-		spawn_resource(get_node(marker_name), tree_scenes[marker_name])
+		spawn_resource_interactable(get_node(marker_name), tree_scenes[marker_name])
 	
-func spawn_resource(marker, scene):
+func spawn_resource_interactable(marker, scene):
 	var spawned_count = spawned_counts[marker.name]
 	for mark in marker.get_children() :
 		if spawned_count < marker.get_child_count() :
@@ -42,5 +42,5 @@ func _spawn_tree_delayed(season) :
 	var marker = get_node(season)
 	var tree_scene = tree_scenes[season]
 	await get_tree().create_timer(5).timeout
-	spawn_resource(marker, tree_scene)
+	spawn_resource_interactable(marker, tree_scene)
 	

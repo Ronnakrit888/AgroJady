@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://1hdis8mylhni"]
+[gd_scene load_steps=37 format=3 uid="uid://1hdis8mylhni"]
 
 [ext_resource type="Script" path="res://Monster/Scripts/enemy.gd" id="1_0ifg1"]
 [ext_resource type="Texture2D" uid="uid://bxqtjo06nsxou" path="res://Monster/Texture/enemy skeleton/skeleton_attack/7ecba72c-7e75-469c-8c0a-78c0260e4cd6.png" id="1_pk401"]
+[ext_resource type="Resource" uid="uid://cp136qoufb3ee" path="res://objects_items/Resources/ResourceType/attackable.tres" id="2_7opxp"]
 [ext_resource type="Texture2D" uid="uid://dusi51s8dli6w" path="res://Monster/Texture/enemy skeleton/skeleton_attack/24b0f5b9-eac0-4a66-a7cc-cb46b095ce6a.png" id="2_sff8s"]
 [ext_resource type="Texture2D" uid="uid://bhykkenc08e41" path="res://Monster/Texture/enemy skeleton/skeleton_attack/50e6dcd7-bc69-42db-8ae0-8ecf3815e128.png" id="3_8jag1"]
 [ext_resource type="Texture2D" uid="uid://bigci2c5sa1ra" path="res://Monster/Texture/enemy skeleton/skeleton_attack/73aa610b-e570-4a50-934b-744c42b03ebd.png" id="4_hnjng"]
@@ -30,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://chsqhy2q1yl7g" path="res://Monster/Texture/enemy skeleton/skeleton_walk/0a0eb271-19cb-4c59-8324-e0c61392534b.png" id="25_ecch0"]
 [ext_resource type="Texture2D" uid="uid://bwi07h1j4nqxi" path="res://Monster/Texture/enemy skeleton/skeleton_walk/1c2f0ed3-c677-42df-89eb-75e2857a22a1.png" id="26_0hqet"]
 [ext_resource type="Texture2D" uid="uid://b1thriel5sedf" path="res://Monster/Texture/enemy skeleton/skeleton_walk/8f5a8341-40a6-42de-990f-cc2640409d6a.png" id="27_bal3a"]
-[ext_resource type="Script" path="res://Monster/Damageable.gd" id="31_y6deo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_af87u"]
 animations = [{
@@ -174,18 +174,20 @@ radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pkh8x"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrwi7"]
+size = Vector2(9.5, 19)
+
 [node name="enemy" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -3)
 collision_layer = 69
 collision_mask = 71
 script = ExtResource("1_0ifg1")
+types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_7opxp")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_af87u")
-animation = &"sidewalk"
-frame = 2
-frame_progress = 0.350605
+animation = &"death"
 
 [node name="detetion_area" type="Area2D" parent="."]
 collision_layer = 2
@@ -204,10 +206,17 @@ shape = SubResource("CircleShape2D_ut0fu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("CircleShape2D_pkh8x")
 
-[node name="Damageable" type="Node" parent="."]
-script = ExtResource("31_y6deo")
+[node name="DamageNumberOrigin" type="Node2D" parent="."]
+position = Vector2(0, -13)
+
+[node name="attackPoint" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackPoint"]
+position = Vector2(13.25, 0.5)
+shape = SubResource("RectangleShape2D_lrwi7")
+debug_color = Color(0.956863, 0, 0.52549, 0.419608)
 
 [connection signal="body_entered" from="detetion_area" to="." method="_on_detetion_area_body_entered"]
 [connection signal="body_exited" from="detetion_area" to="." method="_on_detetion_area_body_exited"]
-[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_entered" from="attackPoint" to="." method="_on_attack_point_body_entered"]
+[connection signal="body_exited" from="attackPoint" to="." method="_on_attack_point_body_exited"]

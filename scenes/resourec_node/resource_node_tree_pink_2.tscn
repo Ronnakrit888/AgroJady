@@ -33,3 +33,4 @@ node_name = "PinkaTree"
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_4y6fy")
 animation = &"default"
+autoplay = "default"
