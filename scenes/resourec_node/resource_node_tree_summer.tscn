@@ -9,27 +9,22 @@
 atlas = ExtResource("4_i50un")
 region = Rect2(32, 384, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mcu0g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ror1h"]
 atlas = ExtResource("4_i50un")
-region = Rect2(64, 384, 32, 48)
+region = Rect2(64, 390, 32, 39)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w11xi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i7dqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ror1h")
 }],
 "loop": false,
-"name": &"full",
+"name": &"default",
 "speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mcu0g")
-}],
-"loop": true,
-"name": &"half",
-"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gr4ai"]
@@ -38,12 +33,13 @@ radius = 6.0
 [node name="ResourceNodeTree" instance=ExtResource("1_du17h")]
 position = Vector2(0, -7)
 node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_sbtl8")])
+node_name = "Normal Tree"
 starting_resource = 5
 pickup_type = ExtResource("3_sb6dg")
 
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_w11xi")
-animation = &"full"
+animation = &"default"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 6)

@@ -4,11 +4,11 @@
 [ext_resource type="Resource" uid="uid://csw5cbb0ba5hh" path="res://objects_items/Resources/ResourceType/cutable.tres" id="2_h6s2q"]
 [ext_resource type="Texture2D" uid="uid://dmxu2e43xbkwf" path="res://UI/assets/trees/BlueTree2.PNG" id="3_7bjc0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3fybt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h430k"]
 atlas = ExtResource("3_7bjc0")
 region = Rect2(32, 390, 32, 39)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fs80"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s4rr"]
 atlas = ExtResource("3_7bjc0")
 region = Rect2(64, 390, 32, 39)
 
@@ -16,19 +16,14 @@ region = Rect2(64, 390, 32, 39)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3fybt")
+"texture": SubResource("AtlasTexture_h430k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s4rr")
 }],
 "loop": true,
-"name": &"full",
+"name": &"default",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7fs80")
-}],
-"loop": false,
-"name": &"half",
-"speed": 0.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tke0u"]
@@ -36,10 +31,11 @@ radius = 5.0
 
 [node name="ResourceNodeTreeCold" instance=ExtResource("1_bg4um")]
 node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_h6s2q")])
+node_name = "Cold Tree"
 
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_3s3xi")
-animation = &"half"
+animation = &"default"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 6)

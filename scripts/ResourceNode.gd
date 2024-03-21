@@ -3,6 +3,7 @@ extends StaticBody2D
 class_name ResourceNode
 
 @export var node_types : Array[ResourceNodeType] 
+@export var node_name : String 
 @export var starting_resource : int = 1
 @export var pickup_type : PackedScene
 @export var launch_velo : float = 100
@@ -11,8 +12,7 @@ class_name ResourceNode
 @onready var animated_sprite = $AnimatedSprite
 @onready var level_parent = get_parent()
 
-
-signal resource_node_queue_free
+signal resource_node_queue_free(String)
 
 var current_resources : int :
 	set(resource_count):
@@ -21,15 +21,15 @@ var current_resources : int :
 		# A resource node emptied of resources is removed from the scene
 		if(resource_count <= 0):
 			queue_free()
-			resource_node_queue_free.emit()
+			emit_signal("resource_node_queue_free", node_name)
 
 func _ready():
 	current_resources = starting_resource
-	animated_sprite.play("full")
+	animated_sprite.frame = 0
 	
 func _process(delta):
 	if current_resources == starting_resource / 2:
-		animated_sprite.play("half")
+		animated_sprite.frame = 1
 		
 func harvest(amount : int):
 	for n in range(amount) :

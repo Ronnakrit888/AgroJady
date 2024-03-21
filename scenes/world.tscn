@@ -92,6 +92,48 @@ position = Vector2(1351, 659)
 [node name="mark4" type="Marker2D" parent="WorldObjects/Summer"]
 position = Vector2(1295, 603)
 
+[node name="Spring" type="Node2D" parent="WorldObjects"]
+
+[node name="mark1" type="Marker2D" parent="WorldObjects/Spring"]
+position = Vector2(313, 1125)
+
+[node name="mark2" type="Marker2D" parent="WorldObjects/Spring"]
+position = Vector2(241, 1133)
+
+[node name="mark3" type="Marker2D" parent="WorldObjects/Spring"]
+position = Vector2(265, 1173)
+
+[node name="mark4" type="Marker2D" parent="WorldObjects/Spring"]
+position = Vector2(313, 1173)
+
+[node name="Winter" type="Node2D" parent="WorldObjects"]
+
+[node name="mark1" type="Marker2D" parent="WorldObjects/Winter"]
+position = Vector2(1767, 579)
+
+[node name="mark2" type="Marker2D" parent="WorldObjects/Winter"]
+position = Vector2(1679, 587)
+
+[node name="mark3" type="Marker2D" parent="WorldObjects/Winter"]
+position = Vector2(1823, 467)
+
+[node name="mark4" type="Marker2D" parent="WorldObjects/Winter"]
+position = Vector2(1751, 499)
+
+[node name="Autumn" type="Node2D" parent="WorldObjects"]
+
+[node name="mark1" type="Marker2D" parent="WorldObjects/Autumn"]
+position = Vector2(1559, 1019)
+
+[node name="mark2" type="Marker2D" parent="WorldObjects/Autumn"]
+position = Vector2(1495, 1059)
+
+[node name="mark3" type="Marker2D" parent="WorldObjects/Autumn"]
+position = Vector2(1575, 1139)
+
+[node name="mark4" type="Marker2D" parent="WorldObjects/Autumn"]
+position = Vector2(1615, 1067)
+
 [node name="GUI" type="CanvasLayer" parent="."]
 process_mode = 3
 script = ExtResource("10_tqpsd")
