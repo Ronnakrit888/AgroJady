@@ -6,7 +6,7 @@ extends StaticBody2D
 
 const lines : Array[String] = [
 	"Hey!" ,
-	"How your feeling?"
+	"How your feeling ?"
 ]
 
 func _ready():

@@ -80,19 +80,16 @@ script = ExtResource("6_38iq5")
 
 [node name="Summer" type="Node2D" parent="WorldObjects"]
 
-[node name="Tree" type="Node2D" parent="WorldObjects/Summer"]
-y_sort_enabled = true
-
-[node name="Marker2D" type="Marker2D" parent="WorldObjects/Summer/Tree"]
+[node name="mark1" type="Marker2D" parent="WorldObjects/Summer"]
 position = Vector2(1335, 627)
 
-[node name="Marker2D2" type="Marker2D" parent="WorldObjects/Summer/Tree"]
+[node name="mark2" type="Marker2D" parent="WorldObjects/Summer"]
 position = Vector2(1375, 627)
 
-[node name="Marker2D3" type="Marker2D" parent="WorldObjects/Summer/Tree"]
+[node name="mark3" type="Marker2D" parent="WorldObjects/Summer"]
 position = Vector2(1351, 659)
 
-[node name="Marker2D4" type="Marker2D" parent="WorldObjects/Summer/Tree"]
+[node name="mark4" type="Marker2D" parent="WorldObjects/Summer"]
 position = Vector2(1295, 603)
 
 [node name="GUI" type="CanvasLayer" parent="."]

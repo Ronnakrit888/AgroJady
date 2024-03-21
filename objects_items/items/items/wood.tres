@@ -7,7 +7,7 @@
 script = ExtResource("2_b00yv")
 display_name = "Wood"
 icon = ExtResource("1_6rg5d")
-maxAmountPrStack = 15
+maxAmountPrStack = 99
 value = 0
 rarity = "Common"
 description = ""

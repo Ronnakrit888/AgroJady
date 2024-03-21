@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bugrw4v85cdoc"]
+[gd_scene load_steps=8 format=3 uid="uid://bugrw4v85cdoc"]
 
 [ext_resource type="PackedScene" uid="uid://cb1fw2tjn5m8i" path="res://scenes/ResourceNode.tscn" id="1_bg4um"]
 [ext_resource type="Resource" uid="uid://csw5cbb0ba5hh" path="res://objects_items/Resources/ResourceType/cutable.tres" id="2_h6s2q"]
 [ext_resource type="Texture2D" uid="uid://dmxu2e43xbkwf" path="res://UI/assets/trees/BlueTree2.PNG" id="3_7bjc0"]
-[ext_resource type="Resource" uid="uid://dgptrhxbulpty" path="res://objects_items/Resources/ResourceType/winter.tres" id="3_pdln3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fybt"]
 atlas = ExtResource("3_7bjc0")
@@ -27,9 +26,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7fs80")
 }],
-"loop": true,
+"loop": false,
 "name": &"half",
-"speed": 5.0
+"speed": 0.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tke0u"]
@@ -37,7 +36,6 @@ radius = 5.0
 
 [node name="ResourceNodeTreeCold" instance=ExtResource("1_bg4um")]
 node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_h6s2q")])
-node_season = Array[Resource("res://objects_items/scripts/SeasonType.gd")]([ExtResource("3_pdln3")])
 
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_3s3xi")

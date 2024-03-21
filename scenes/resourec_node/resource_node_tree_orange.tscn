@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b84mcwgba3wy0"]
+[gd_scene load_steps=8 format=3 uid="uid://b84mcwgba3wy0"]
 
 [ext_resource type="PackedScene" uid="uid://cb1fw2tjn5m8i" path="res://scenes/ResourceNode.tscn" id="1_4vftr"]
 [ext_resource type="Resource" uid="uid://csw5cbb0ba5hh" path="res://objects_items/Resources/ResourceType/cutable.tres" id="2_2n5qb"]
-[ext_resource type="Resource" uid="uid://cveikue725tn3" path="res://objects_items/Resources/ResourceType/autumn.tres" id="3_ii6r5"]
 [ext_resource type="Texture2D" uid="uid://c2bqa6st741li" path="res://UI/assets/trees/OrangeTree2.PNG" id="3_ms3ko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7wely"]
@@ -19,7 +18,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7wely")
 }],
-"loop": true,
+"loop": false,
 "name": &"full",
 "speed": 5.0
 }, {
@@ -38,11 +37,10 @@ radius = 5.09902
 [node name="ResourceNodeTreeOrange" instance=ExtResource("1_4vftr")]
 node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_2n5qb")])
 starting_resource = 3
-node_season = Array[Resource("res://objects_items/scripts/SeasonType.gd")]([ExtResource("3_ii6r5")])
 
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_adpef")
-animation = &"half"
+animation = &"full"
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_fsq3c")

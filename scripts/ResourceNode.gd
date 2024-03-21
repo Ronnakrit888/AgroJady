@@ -38,13 +38,14 @@ func harvest(amount : int):
 	current_resources -= amount
 	
 func spawn_resource():
-	var pickup_instance : Collectable = pickup_type.instantiate() as Collectable
-	pickup_instance.position = position
-	
-	level_parent.call_deferred("add_child", pickup_instance)
-	var direction : Vector2 = Vector2(
-		randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)
-	).normalized()
-	
-	pickup_instance.launch(direction * launch_velo, launch_time)
+	if pickup_type :
+		var pickup_instance : Collectable = pickup_type.instantiate() as Collectable
+		pickup_instance.position = position
+		
+		level_parent.call_deferred("add_child", pickup_instance)
+		var direction : Vector2 = Vector2(
+			randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)
+		).normalized()
+		
+		pickup_instance.launch(direction * launch_velo, launch_time)
 	
