@@ -84,4 +84,4 @@ func _plant_seed(coord) -> void :
 	
 func _on_seed_changed(new_seed) -> void : 
 	currentSeed = new_seed
-
+	

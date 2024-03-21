@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bugrw4v85cdoc"]
+
+[ext_resource type="PackedScene" uid="uid://cb1fw2tjn5m8i" path="res://scenes/ResourceNode.tscn" id="1_bg4um"]
+[ext_resource type="Resource" uid="uid://csw5cbb0ba5hh" path="res://objects_items/Resources/ResourceType/cutable.tres" id="2_h6s2q"]
+[ext_resource type="Texture2D" uid="uid://dmxu2e43xbkwf" path="res://UI/assets/trees/BlueTree2.PNG" id="3_7bjc0"]
+[ext_resource type="Resource" uid="uid://dgptrhxbulpty" path="res://objects_items/Resources/ResourceType/winter.tres" id="3_pdln3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fybt"]
+atlas = ExtResource("3_7bjc0")
+region = Rect2(32, 390, 32, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fs80"]
+atlas = ExtResource("3_7bjc0")
+region = Rect2(64, 390, 32, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3s3xi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fybt")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fs80")
+}],
+"loop": true,
+"name": &"half",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tke0u"]
+radius = 5.0
+
+[node name="ResourceNodeTreeCold" instance=ExtResource("1_bg4um")]
+node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_h6s2q")])
+node_season = Array[Resource("res://objects_items/scripts/SeasonType.gd")]([ExtResource("3_pdln3")])
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_3s3xi")
+animation = &"half"
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_tke0u")

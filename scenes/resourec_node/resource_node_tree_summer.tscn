@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://73sdbwgnkuft"]
+
+[ext_resource type="PackedScene" uid="uid://cb1fw2tjn5m8i" path="res://scenes/ResourceNode.tscn" id="1_du17h"]
+[ext_resource type="Resource" uid="uid://csw5cbb0ba5hh" path="res://objects_items/Resources/ResourceType/cutable.tres" id="2_sbtl8"]
+[ext_resource type="PackedScene" uid="uid://durv868p8to1y" path="res://objects_items/Collectables/wood.tscn" id="3_sb6dg"]
+[ext_resource type="Texture2D" uid="uid://b4s5atamjs30n" path="res://SpriteSheets/SunnysideWorld_Tileset_V0.1.png" id="4_i50un"]
+[ext_resource type="Resource" uid="uid://csgft81rye45k" path="res://objects_items/Resources/ResourceType/summer.tres" id="4_y1wfw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7dqq"]
+atlas = ExtResource("4_i50un")
+region = Rect2(32, 384, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcu0g"]
+atlas = ExtResource("4_i50un")
+region = Rect2(64, 384, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w11xi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7dqq")
+}],
+"loop": true,
+"name": &"full",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcu0g")
+}],
+"loop": true,
+"name": &"half",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gr4ai"]
+radius = 6.0
+
+[node name="ResourceNodeTree" instance=ExtResource("1_du17h")]
+position = Vector2(0, -7)
+node_types = Array[Resource("res://objects_items/Resources/ResourceType/resource_node_type.gd")]([ExtResource("2_sbtl8")])
+starting_resource = 5
+pickup_type = ExtResource("3_sb6dg")
+node_season = Array[Resource("res://objects_items/scripts/SeasonType.gd")]([ExtResource("4_y1wfw")])
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_w11xi")
+animation = &"half"
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_gr4ai")

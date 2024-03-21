@@ -11,6 +11,9 @@ class_name ResourceNode
 @onready var animated_sprite = $AnimatedSprite
 @onready var level_parent = get_parent()
 
+
+signal resource_node_queue_free
+
 var current_resources : int :
 	set(resource_count):
 		current_resources = resource_count
@@ -18,6 +21,7 @@ var current_resources : int :
 		# A resource node emptied of resources is removed from the scene
 		if(resource_count <= 0):
 			queue_free()
+			resource_node_queue_free.emit()
 
 func _ready():
 	current_resources = starting_resource
@@ -43,5 +47,4 @@ func spawn_resource():
 	).normalized()
 	
 	pickup_instance.launch(direction * launch_velo, launch_time)
-	
 	
