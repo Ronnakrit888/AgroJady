@@ -21,12 +21,13 @@ func update_to_slot(slot : InventorySlot) -> void :
 
 func takeItem():
 	var slot = item_stack_gui.inventorySlot
-	if !slot.item or slot.item.value == 0:
+	if !slot or slot.item.value == 0 :
 		return
 		
 	if slot.amount != 0 :
 		slot.amount -= 1
-		print(slot.amount)
+		Global.gain_coin(slot.item.value)
+		print(Global.coins)
 		
 	item_stack_gui.update()
 	inventory.updated.emit()

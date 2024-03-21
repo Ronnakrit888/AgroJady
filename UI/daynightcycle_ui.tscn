@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://b4mitotcubsj0"]
 
-[ext_resource type="Shader" path="res://UI/Cutted/pixelperfect.gdshader" id="1_5i3u0"]
+[ext_resource type="Shader" path="res://UI/assets/pixelperfect.gdshader" id="1_5i3u0"]
 [ext_resource type="Script" path="res://UI/daynightcycle_ui.gd" id="2_64ojf"]
-[ext_resource type="Texture2D" uid="uid://ce18q734am1hn" path="res://UI/Cutted/daynightcycle-ui.png" id="3_nf8nd"]
-[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="4_xbu5t"]
+[ext_resource type="Texture2D" uid="uid://ce18q734am1hn" path="res://UI/assets/daynightcycle-ui.png" id="3_nf8nd"]
+[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Plant/Fonts/ThaleahFat.ttf" id="4_xbu5t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qhbnj"]
 shader = ExtResource("1_5i3u0")
@@ -24,10 +24,13 @@ region = Rect2(2, 47, 16, 5)
 
 [node name="DayNightCycleUI" type="Control"]
 material = SubResource("ShaderMaterial_qhbnj")
+custom_minimum_size = Vector2(73, 43)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1079.0
+offset_bottom = -605.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_64ojf")

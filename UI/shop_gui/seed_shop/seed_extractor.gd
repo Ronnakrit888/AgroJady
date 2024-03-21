@@ -16,9 +16,10 @@ func update_ui(node : Node, item_texture, item_amount) -> void :
 
 func _on_texture_button_button_down():
 	if (seedItem != null ) :
+		print(Global.coins)
 		if Global.coins >= seedItem.get_value() :
 			seedItem.add_amount(1)
-			Global.coins -= seedItem.get_value()
+			Global.remove_coin(seedItem.get_value())
 			_update_item_containers()
 		else :
 			flash.play("flash_animation")

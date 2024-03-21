@@ -44,6 +44,9 @@ func update_animation():
 		previous_direct = direction
 		
 func move():
+	if DialogManager.is_dialog_active :
+		return
+		
 	input_movement = Input.get_vector("left", "right", "up", "down").normalized()
 	
 	if input_movement == Vector2.ZERO:

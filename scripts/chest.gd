@@ -5,10 +5,11 @@ extends StaticBody2D
 
 func _ready():
 	animated_sprite.frame = 0
-	interaction_area.interact =Callable(self, "_open_ui")
+	interaction_area.interact = Callable(self, "_open_ui")
 
 func _open_ui():
-	print("Chestttt")
-	
+	animated_sprite.frame = 1
+	await animated_sprite.animation_finished
+
 func _on_interaction_area_leave_area():
-	pass
+	animated_sprite.frame = 0

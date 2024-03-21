@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bos36urvquqkq"]
 
 [ext_resource type="Script" path="res://UI/shop_gui/seed_shop/seed_shop_gui.gd" id="1_aowas"]
-[ext_resource type="Texture2D" uid="uid://dswhdn6shx83m" path="res://UI/Cutted/images/Shop design3.png" id="1_kkmup"]
+[ext_resource type="Texture2D" uid="uid://dswhdn6shx83m" path="res://UI/assets/images/Shop design3.png" id="2_k3cua"]
 [ext_resource type="PackedScene" uid="uid://cxx5celd5we6l" path="res://UI/shop_gui/seed_shop/seed_extractor.tscn" id="2_r1lq0"]
 [ext_resource type="Resource" uid="uid://dmslrgqbad3ye" path="res://Plant/Scene and Data/carbage_scene_data.tres" id="3_y2cer"]
 [ext_resource type="Resource" uid="uid://iikhnkum3ya7" path="res://Plant/Scene and Data/carrot_scene_data.tres" id="4_004pj"]
@@ -25,7 +25,7 @@ custom_minimum_size = Vector2(245, 156)
 layout_mode = 1
 offset_right = 245.0
 offset_bottom = 156.0
-texture = ExtResource("1_kkmup")
+texture = ExtResource("2_k3cua")
 region_rect = Rect2(96, 128, 320, 208)
 
 [node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]

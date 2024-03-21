@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cd5y5uoteir7i"]
 
 [ext_resource type="Script" path="res://UI/SlotInventory.gd" id="1_dvwkv"]
-[ext_resource type="Texture2D" uid="uid://cgo62hbmp7ytp" path="res://UI/Cutted/images/base_21.png" id="2_pqjpw"]
-[ext_resource type="Texture2D" uid="uid://fjgoqqrm500f" path="res://UI/Cutted/images/base_15.png" id="3_hg18m"]
+[ext_resource type="Texture2D" uid="uid://cgo62hbmp7ytp" path="res://UI/assets/images/base_21.png" id="2_pqjpw"]
+[ext_resource type="Texture2D" uid="uid://fjgoqqrm500f" path="res://UI/assets/images/base_15.png" id="3_hg18m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n20fw"]
 atlas = ExtResource("2_pqjpw")

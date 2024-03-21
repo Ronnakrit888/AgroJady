@@ -6,7 +6,7 @@ func _process(delta):
 	if hour >= 18 or hour <= 4:
 		self.visible = true
 		create_tween().set_ease(Tween.EASE_IN).tween_property(
-			self, "texture_scale", 0.2, 1.0)
+			self, "texture_scale", 0.15, 1.0)
 	else :
 		create_tween().set_ease(Tween.EASE_IN).tween_property(
 			self, "texture_scale", 0.01, 1.0)

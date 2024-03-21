@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5jmdhb762vu5" path="res://player/idle.png" id="4_03e5o"]
 [ext_resource type="Texture2D" uid="uid://cyypu4h7q6iyr" path="res://player/walk.png" id="5_iklsp"]
 [ext_resource type="Script" path="res://scripts/HandEquip.gd" id="6_lfsds"]
-[ext_resource type="Texture2D" uid="uid://duop20b7uf7vk" path="res://UI/Cutted/IMG_0280.PNG" id="7_dcjal"]
+[ext_resource type="Texture2D" uid="uid://duop20b7uf7vk" path="res://UI/assets/IMG_0280.PNG" id="7_dcjal"]
 [ext_resource type="Script" path="res://scenes/Lighting.gd" id="8_6nkqr"]
 
 [sub_resource type="Animation" id="Animation_jdni8"]

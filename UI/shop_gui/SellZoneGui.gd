@@ -2,6 +2,9 @@ extends Control
 
 class_name SellZoneGui
 
+signal opened
+signal closed
+
 @onready var inventory : Inventory = preload("res://UI/Inv.tres")
 @onready var slotsInventory : Array = $NinePatchRect/InventoryContainer.get_children()
 
@@ -31,7 +34,9 @@ func onSlotSelected(slot) :
 func open():
 	visible = true
 	isOpen = true
+	opened.emit()
 
 func close():
 	visible = false
 	isOpen = false
+	closed.emit()

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://UI/shop_gui/seed_shop/seed_extractor.gd" id="1_vpq8q"]
 [ext_resource type="PackedScene" uid="uid://dp3xlm0mr45ek" path="res://Plant/item_info.tscn" id="1_wxnpy"]
-[ext_resource type="Texture2D" uid="uid://bon8vor422q5l" path="res://UI/Cutted/images/buttons_68.png" id="2_k3ie5"]
-[ext_resource type="Texture2D" uid="uid://beqeqq60q2ji8" path="res://UI/Cutted/images/buttons_70.png" id="3_0uii2"]
-[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="4_6ltr2"]
+[ext_resource type="Texture2D" uid="uid://bon8vor422q5l" path="res://UI/assets/images/buttons_68.png" id="2_k3ie5"]
+[ext_resource type="Texture2D" uid="uid://beqeqq60q2ji8" path="res://UI/assets/images/buttons_70.png" id="3_0uii2"]
+[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Plant/Fonts/ThaleahFat.ttf" id="4_6ltr2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c5a0h"]
 font = ExtResource("4_6ltr2")

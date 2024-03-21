@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlqansq5khr5c"]
 
 [ext_resource type="Script" path="res://UI/ItemStackGUI.gd" id="1_jej1w"]
-[ext_resource type="FontFile" uid="uid://db1cxroeobjhp" path="res://Fonts/m6x11.ttf" id="2_blgmw"]
+[ext_resource type="FontFile" uid="uid://db1cxroeobjhp" path="res://Plant/Fonts/m6x11.ttf" id="2_blgmw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6e636"]
 font = ExtResource("2_blgmw")

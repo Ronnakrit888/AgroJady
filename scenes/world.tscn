@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bdtpfxxgt61wi"]
+[gd_scene load_steps=34 format=3 uid="uid://bdtpfxxgt61wi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y5533"]
 [ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p8ojd"]
@@ -9,16 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://c4o4m0scee8bn" path="res://scenes/door.tscn" id="9_wpkki"]
 [ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="10_tqpsd"]
 [ext_resource type="PackedScene" uid="uid://coe2tgc7sfe3x" path="res://UI/inventory_gui.tscn" id="13_7skpm"]
+[ext_resource type="Texture2D" uid="uid://djrxhc36clipn" path="res://UI/assets/images/bars_02.png" id="13_h1jnb"]
+[ext_resource type="Texture2D" uid="uid://bcjpth6njqind" path="res://UI/assets/images/bars_17.png" id="14_4xbi7"]
 [ext_resource type="PackedScene" uid="uid://ckrte5bskt18r" path="res://UI/Hotbar.tscn" id="15_mrmc4"]
+[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Plant/Fonts/ThaleahFat.ttf" id="16_pvsij"]
 [ext_resource type="PackedScene" uid="uid://cwcx8pg876ddh" path="res://Plant/hotbar_seed.tscn" id="16_ypwxb"]
 [ext_resource type="PackedScene" uid="uid://bkj8u037f5l43" path="res://UI/shop_gui/sell_zone_gui.tscn" id="17_78m6q"]
-[ext_resource type="Texture2D" uid="uid://djrxhc36clipn" path="res://UI/Cutted/images/bars_02.png" id="18_8rl70"]
-[ext_resource type="PackedScene" uid="uid://dummgpmxwpqha" path="res://UI/coins.tscn" id="19_5q0fv"]
-[ext_resource type="Texture2D" uid="uid://bcjpth6njqind" path="res://UI/Cutted/images/bars_17.png" id="19_i8fx1"]
+[ext_resource type="Texture2D" uid="uid://bsvinnxk1evds" path="res://SpriteSheets/sprite sheets/items.png" id="19_mi5t6"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="20_1jcm6"]
-[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="21_7hohi"]
+[ext_resource type="Script" path="res://scripts/coins.gd" id="20_3eg12"]
 [ext_resource type="PackedScene" uid="uid://2agvwcsot75r" path="res://scenes/chest.tscn" id="22_0run8"]
 [ext_resource type="PackedScene" uid="uid://bos36urvquqkq" path="res://UI/shop_gui/seed_shop/seed_shop_gui.tscn" id="23_nmq3a"]
+[ext_resource type="PackedScene" uid="uid://ccx8jonejrn2q" path="res://scenes/Goblin.tscn" id="23_tc8xk"]
 [ext_resource type="PackedScene" uid="uid://b4mitotcubsj0" path="res://UI/daynightcycle_ui.tscn" id="23_yhcr7"]
 [ext_resource type="Script" path="res://scripts/DayNightCycle.gd" id="24_tacxu"]
 [ext_resource type="PackedScene" uid="uid://pn4thxqf0dao" path="res://interaction/SeedShop.tscn" id="25_hdyss"]
@@ -29,9 +31,19 @@
 [ext_resource type="PackedScene" uid="uid://dl8lnin5t4r0h" path="res://scenes/scene_trigger.tscn" id="30_vlww1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t0jvi"]
-font = ExtResource("21_7hohi")
+font = ExtResource("16_pvsij")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vvpm"]
+atlas = ExtResource("19_mi5t6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yhk5d"]
+font = ExtResource("16_pvsij")
+font_size = 24
+outline_size = 4
+outline_color = Color(0.203922, 0.203922, 0.203922, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_306s6"]
 size = Vector2(18, 9)
@@ -75,12 +87,6 @@ position = Vector2(1080, 633)
 [node name="GUI" type="CanvasLayer" parent="."]
 process_mode = 3
 script = ExtResource("10_tqpsd")
-
-[node name="Coins" parent="GUI" instance=ExtResource("19_5q0fv")]
-offset_left = 24.0
-offset_top = 576.0
-offset_right = -1004.0
-offset_bottom = -24.0
 
 [node name="InventoryGUI" parent="GUI" instance=ExtResource("13_7skpm")]
 anchors_preset = 8
@@ -137,8 +143,8 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 64.0
 offset_bottom = 23.0
-texture_under = ExtResource("18_8rl70")
-texture_progress = ExtResource("19_i8fx1")
+texture_under = ExtResource("13_h1jnb")
+texture_progress = ExtResource("14_4xbi7")
 script = ExtResource("20_1jcm6")
 player = NodePath("../../Player")
 
@@ -182,10 +188,30 @@ offset_bottom = 32.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="Coins" type="TextureRect" parent="GUI"]
+offset_left = 16.0
+offset_top = 88.0
+offset_right = 56.0
+offset_bottom = 128.0
+texture = SubResource("AtlasTexture_1vvpm")
+script = ExtResource("20_3eg12")
+
+[node name="Label" type="Label" parent="GUI/Coins"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 31.0
+label_settings = SubResource("LabelSettings_yhk5d")
+vertical_alignment = 1
+
+[node name="DayNight" type="CanvasModulate" parent="."]
 script = ExtResource("24_tacxu")
 gradient_texture = ExtResource("25_vfpyi")
 INGAME_SPEED = 80.0
+
+[node name="Goblin" parent="." instance=ExtResource("23_tc8xk")]
+position = Vector2(720, 184)
 
 [node name="Chest" parent="." instance=ExtResource("22_0run8")]
 y_sort_enabled = false
@@ -220,3 +246,7 @@ position = Vector2(664, 208)
 
 [connection signal="closed" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_opened"]
+[connection signal="closed" from="GUI/SellZoneGUI" to="GUI" method="_on_sell_zone_gui_closed"]
+[connection signal="opened" from="GUI/SellZoneGUI" to="GUI" method="_on_sell_zone_gui_opened"]
+[connection signal="closed" from="GUI/SeedShopGUI" to="GUI" method="_on_seed_shop_gui_closed"]
+[connection signal="opened" from="GUI/SeedShopGUI" to="GUI" method="_on_seed_shop_gui_opened"]

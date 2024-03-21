@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dp3xlm0mr45ek"]
 
-[ext_resource type="Texture2D" uid="uid://da45p4ploomgy" path="res://UI/Cutted/images/base_38.png" id="1_miske"]
+[ext_resource type="Texture2D" uid="uid://da45p4ploomgy" path="res://UI/assets/images/base_38.png" id="1_miske"]
 [ext_resource type="Script" path="res://Plant/item_info.gd" id="2_nduaq"]
-[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Fonts/ThaleahFat.ttf" id="3_nxkos"]
+[ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Plant/Fonts/ThaleahFat.ttf" id="3_nxkos"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vypfd"]
 font = ExtResource("3_nxkos")

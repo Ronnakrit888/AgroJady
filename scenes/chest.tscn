@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://tfnfycqoy82u" path="res://SpriteSheets/spring and summer objects.png" id="1_2ob77"]
 [ext_resource type="Script" path="res://scripts/chest.gd" id="1_r832i"]
-[ext_resource type="Script" path="res://scripts/interaction_area.gd" id="2_c2py4"]
+[ext_resource type="PackedScene" uid="uid://c1pnyhes6l2pv" path="res://interaction/interaction_area.tscn" id="3_qh44n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfth0"]
 atlas = ExtResource("1_2ob77")
@@ -29,7 +29,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5jfb"]
 radius = 5.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5c1e0"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvbwg"]
 radius = 9.0
 
 [node name="Chest" type="StaticBody2D"]
@@ -48,15 +48,12 @@ frame_progress = 0.421419
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_a5jfb")
 
-[node name="InteractionArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("2_c2py4")
+[node name="InteractionArea" parent="." instance=ExtResource("3_qh44n")]
 action_name = "Open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 7)
-shape = SubResource("CircleShape2D_5c1e0")
-debug_color = Color(0, 0.631373, 0.470588, 0.419608)
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_cvbwg")
+debug_color = Color(0.00784314, 0.537255, 0.376471, 0.419608)
 
 [connection signal="leave_area" from="InteractionArea" to="." method="_on_interaction_area_leave_area"]

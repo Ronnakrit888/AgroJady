@@ -3,7 +3,7 @@ extends BaseScene
 @onready var tileMap : TileMap = $TileMap
 @onready var grid_helper = $TileMap/GridHelper
 @onready var gui = $GUI
-@onready var canvas_modulate = $CanvasModulate
+@onready var day_night = $DayNight
 @onready var day_time_ui = $GUI/DayNightCycleUI
 
 var currentSeed : PlantData
@@ -15,7 +15,7 @@ var plants : Dictionary = {}
 func _ready() :
 	super()
 	player.planting.connect(_on_player_planting)
-	canvas_modulate.time_tick.connect(day_time_ui.set_daytime)
+	day_night.time_tick.connect(day_time_ui.set_daytime)
 	grid_helper.visible = false
 	Global.seed_changed.connect(_on_seed_changed)
 	gui.setup_hotbar_seed()
@@ -27,6 +27,7 @@ func _on_inventory_gui_opened():
 	get_tree().paused = true
 	
 func _physics_process(_delta):
+	
 	var playerMapCoord = tileMap.local_to_map(player.position)
 	#var mouse_position = Vector2i(get_global_mouse_position() / GRID_SIZE ) * GRID_SIZE
 	grid_helper.position = playerMapCoord * GRID_SIZE

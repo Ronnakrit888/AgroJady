@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://xyfmbdpxohc7"]
 
 [ext_resource type="Script" path="res://UI/SlotHotbar.gd" id="1_buklx"]
-[ext_resource type="Texture2D" uid="uid://cgo62hbmp7ytp" path="res://UI/Cutted/images/base_21.png" id="2_7l7kn"]
-[ext_resource type="Texture2D" uid="uid://fjgoqqrm500f" path="res://UI/Cutted/images/base_15.png" id="3_fucxj"]
+[ext_resource type="Texture2D" uid="uid://cgo62hbmp7ytp" path="res://UI/assets/images/base_21.png" id="2_7l7kn"]
+[ext_resource type="Texture2D" uid="uid://fjgoqqrm500f" path="res://UI/assets/images/base_15.png" id="3_fucxj"]
 [ext_resource type="PackedScene" uid="uid://dlqansq5khr5c" path="res://UI/itemStackGUI.tscn" id="4_3spx8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n20fw"]
