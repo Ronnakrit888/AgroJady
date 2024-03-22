@@ -4,6 +4,8 @@ class_name Collectable
 
 @export var itemRes : Item
 @onready var collision_shape = $CollisionShape2D
+@onready var sound  = preload("res://SFX/PickupItem.mp3") as AudioStream
+
 
 var launch_vel : Vector2 = Vector2.ZERO 
 var time_since_launch : float = 0.0
@@ -16,6 +18,7 @@ var launching : bool = false :
 	
 
 func collect(inv : Inventory):
+	AudioManager.play_sound(sound)
 	inv.insert(itemRes)
 	
 	var tween = create_tween()

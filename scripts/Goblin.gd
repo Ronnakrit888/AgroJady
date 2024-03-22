@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var interaction_area : InteractionArea = $InteractionArea
 @onready var sprite = $AnimatedSprite2D
-@onready var speech_sound = preload("res://SFX/punchy-taps-ui-5-183901.mp3")
+@onready var speech_sound = preload("res://SFX/DialogSound.mp3")
 
 const lines : Array[String] = [
 	"Hey!" ,

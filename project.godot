@@ -23,6 +23,7 @@ scene_manager="*res://scripts/scene_manager.gd"
 DialogManager="*res://scripts/DialogManager.gd"
 DamageNumbers="*res://Monster/Scripts/DamageNumbers.gd"
 PopUpDisplay="*res://scripts/PopUp.gd"
+AudioManager="*res://SFX/AudioManager.gd"
 
 [display]
 

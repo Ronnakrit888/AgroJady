@@ -52,7 +52,6 @@ func _on_player_planting():
 			continue
 		
 		if tile.get_custom_data("Summer") :
-			print("Summer")
 			var plantCoord = tileMap.local_to_map(grid_helper.global_position)
 			if not plants.has(plantCoord) : 
 				if currentSeed.get_type() == "Summer":

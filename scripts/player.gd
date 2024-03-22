@@ -5,6 +5,9 @@ class_name Player
 signal planting
 signal healthChanged
 
+@export var walking : AudioStream
+@export var mining : AudioStream
+
 @export var speed : float = 100.0
 @export var inventory : Inventory
 @export var maxHealth : float = 500
@@ -12,13 +15,13 @@ signal healthChanged
 @onready var previous_direct : String = "right"
 @onready var currentHealth : float = maxHealth
 
+
 var input_movement = Vector2.ZERO
 var direction : String
 var is_action : bool = false
 var mouseLocFromPlayer = null
 var have_equip_item : bool = false
 var clicked : bool = false
-var enemy_inattack_range : bool = false
 
 func player() :
 	return
@@ -26,6 +29,7 @@ func player() :
 func _physics_process(delta):
 	move()
 	update_animation()
+	play_sound()
 
 func update_animation():
 	mouseLocFromPlayer = get_global_mouse_position() - self.global_position
@@ -72,9 +76,22 @@ func action():
 func _on_area_detect_area_entered(area):
 	if area.has_method("collect"):
 		area.collect(inventory)
-	
+
+
 func _on_hand_equip_have_equip_item():
 	have_equip_item = true
 
 func _on_hand_equip_no_equip_item():
 	have_equip_item = false
+
+
+func _on_area_detect_body_entered(body):
+	if body is Enemy :
+		body.attack_damage.connect(_on_health_changed)
+	
+func _on_health_changed(amount):
+	currentHealth -= amount
+	print(currentHealth)
+
+func play_sound():
+	pass

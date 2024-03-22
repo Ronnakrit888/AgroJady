@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2rkrpcgleo6i"]
+
+[ext_resource type="Texture2D" uid="uid://tfnfycqoy82u" path="res://SpriteSheets/spring and summer objects.png" id="1_lctwj"]
+[ext_resource type="Script" path="res://scripts/Sign.gd" id="1_whhak"]
+[ext_resource type="PackedScene" uid="uid://c1pnyhes6l2pv" path="res://interaction/interaction_area.tscn" id="2_rihbu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jityw"]
+radius = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r748l"]
+atlas = ExtResource("1_lctwj")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50p5m"]
+
+[node name="Sign" type="StaticBody2D"]
+script = ExtResource("1_whhak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_jityw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_r748l")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_rihbu")]
+action_name = "Read"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_50p5m")
+debug_color = Color(0, 0.639216, 0.372549, 0.419608)

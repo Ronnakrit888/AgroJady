@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bdtpfxxgt61wi"]
+[gd_scene load_steps=35 format=3 uid="uid://bdtpfxxgt61wi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y5533"]
 [ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p8ojd"]
@@ -26,9 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://bnx5uoxq4mgvy" path="res://Colors/daynightcycle-gradient-texture.tres" id="25_vfpyi"]
 [ext_resource type="Script" path="res://scripts/Shop.gd" id="26_k6o1s"]
 [ext_resource type="PackedScene" uid="uid://dhykcev6fajsd" path="res://interaction/Sell_Zone.tscn" id="27_ag4oa"]
-[ext_resource type="PackedScene" uid="uid://1hdis8mylhni" path="res://Monster/Scenes/enemy.tscn" id="28_bm0fs"]
 [ext_resource type="Script" path="res://scripts/EnemySpawner.gd" id="29_h8vwf"]
 [ext_resource type="PackedScene" uid="uid://dl8lnin5t4r0h" path="res://scenes/scene_trigger.tscn" id="30_vlww1"]
+[ext_resource type="AudioStream" uid="uid://oou7ibo385o7" path="res://SFX/cottagecore-17463.mp3" id="30_yjvx4"]
+[ext_resource type="PackedScene" uid="uid://d2rkrpcgleo6i" path="res://interaction/Sign.tscn" id="31_ckjq3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t0jvi"]
 font = ExtResource("16_pvsij")
@@ -82,58 +83,70 @@ script = ExtResource("6_38iq5")
 [node name="Summer" type="Node2D" parent="WorldObjects"]
 
 [node name="mark1" type="Marker2D" parent="WorldObjects/Summer"]
-position = Vector2(1335, 627)
+position = Vector2(792, 634)
 
 [node name="mark2" type="Marker2D" parent="WorldObjects/Summer"]
-position = Vector2(1375, 627)
+position = Vector2(1139, 608)
 
 [node name="mark3" type="Marker2D" parent="WorldObjects/Summer"]
-position = Vector2(1351, 659)
+position = Vector2(1437, 625)
 
 [node name="mark4" type="Marker2D" parent="WorldObjects/Summer"]
-position = Vector2(1295, 603)
+position = Vector2(1215, 900)
+
+[node name="mark5" type="Marker2D" parent="WorldObjects/Summer"]
+position = Vector2(824, 994)
 
 [node name="Spring" type="Node2D" parent="WorldObjects"]
 
 [node name="mark1" type="Marker2D" parent="WorldObjects/Spring"]
-position = Vector2(785, 677)
+position = Vector2(399, 944)
 
 [node name="mark2" type="Marker2D" parent="WorldObjects/Spring"]
-position = Vector2(713, 685)
+position = Vector2(674, 1124)
 
 [node name="mark3" type="Marker2D" parent="WorldObjects/Spring"]
-position = Vector2(737, 725)
+position = Vector2(308, 1110)
 
 [node name="mark4" type="Marker2D" parent="WorldObjects/Spring"]
-position = Vector2(785, 725)
+position = Vector2(806, 1180)
+
+[node name="mark5" type="Marker2D" parent="WorldObjects/Spring"]
+position = Vector2(297, 1224)
 
 [node name="Winter" type="Node2D" parent="WorldObjects"]
 
 [node name="mark1" type="Marker2D" parent="WorldObjects/Winter"]
-position = Vector2(1329, 869)
+position = Vector2(1511, 1147)
 
 [node name="mark2" type="Marker2D" parent="WorldObjects/Winter"]
-position = Vector2(1241, 877)
+position = Vector2(895, 1259)
 
 [node name="mark3" type="Marker2D" parent="WorldObjects/Winter"]
-position = Vector2(1385, 757)
+position = Vector2(1719, 1107)
 
 [node name="mark4" type="Marker2D" parent="WorldObjects/Winter"]
-position = Vector2(1313, 789)
+position = Vector2(647, 1275)
+
+[node name="mark5" type="Marker2D" parent="WorldObjects/Winter"]
+position = Vector2(271, 1163)
 
 [node name="Autumn" type="Node2D" parent="WorldObjects"]
 
 [node name="mark1" type="Marker2D" parent="WorldObjects/Autumn"]
-position = Vector2(697, 821)
+position = Vector2(1507, 1058)
 
 [node name="mark2" type="Marker2D" parent="WorldObjects/Autumn"]
-position = Vector2(633, 861)
+position = Vector2(1629, 913)
 
 [node name="mark3" type="Marker2D" parent="WorldObjects/Autumn"]
-position = Vector2(713, 941)
+position = Vector2(1594, 1183)
 
 [node name="mark4" type="Marker2D" parent="WorldObjects/Autumn"]
-position = Vector2(753, 869)
+position = Vector2(1665, 1025)
+
+[node name="mark5" type="Marker2D" parent="WorldObjects/Autumn"]
+position = Vector2(1839, 923)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -275,11 +288,11 @@ position = Vector2(417, 82)
 position = Vector2(592, 168)
 script = ExtResource("26_k6o1s")
 
+[node name="Sign" parent="." instance=ExtResource("31_ckjq3")]
+position = Vector2(466, 36)
+
 [node name="Monster" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="enemy" parent="Monster" instance=ExtResource("28_bm0fs")]
-position = Vector2(1136, 760)
 
 [node name="HouseSceneTrigger" parent="." instance=ExtResource("30_vlww1")]
 position = Vector2(664, 193)
@@ -308,6 +321,11 @@ position = Vector2(601, 66)
 position = Vector2(738, 325)
 
 [node name="Enemy" type="Node2D" parent="EnemySpawner"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_yjvx4")
+autoplay = true
+max_distance = 1000.0
 
 [connection signal="closed" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="GUI/InventoryGUI" to="." method="_on_inventory_gui_opened"]
