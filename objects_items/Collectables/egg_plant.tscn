@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://pu87cfuaq6a2"]
+
+[ext_resource type="PackedScene" uid="uid://cljr6vwgxjt66" path="res://objects_items/Collectables/collectable.tscn" id="1_gxon6"]
+[ext_resource type="Resource" uid="uid://b4s5svyasmdfh" path="res://objects_items/items/items/egg_plant.tres" id="2_ieg2u"]
+[ext_resource type="Texture2D" uid="uid://c2vhj7xrkee5y" path="res://SpriteSheets/items.png" id="3_bmr7f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27owd"]
+atlas = ExtResource("3_bmr7f")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ik44c"]
+radius = 8.0
+
+[node name="Collectables" instance=ExtResource("1_gxon6")]
+itemRes = ExtResource("2_ieg2u")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_27owd")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_ik44c")

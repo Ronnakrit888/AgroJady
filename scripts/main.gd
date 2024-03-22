@@ -51,18 +51,18 @@ func _on_player_planting():
 		if tile == null or currentSeed == null :
 			continue
 		
-		if tile.get_custom_data("Summer") :
-			var plantCoord = tileMap.local_to_map(grid_helper.global_position)
-			if not plants.has(plantCoord) : 
-				if currentSeed.get_type() == "Summer":
-					if currentSeed.seed_left() :
-						currentSeed.substract_amount()
-						_plant_seed(plantCoord)
-					else :
-						gui.hotbar_slot_empty(currentSeed)
-					
-			if is_harvestable(plantCoord) :
-				harvest_plant(plantCoord)
+		#if tile.get_custom_data("Summer") :
+		var plantCoord = tileMap.local_to_map(grid_helper.global_position)
+		if not plants.has(plantCoord) : 
+				#if currentSeed.get_type() == "Summer":
+			if currentSeed.seed_left() :
+				currentSeed.substract_amount()
+				_plant_seed(plantCoord)
+			else :
+				gui.hotbar_slot_empty(currentSeed)
+			
+		if is_harvestable(plantCoord) :
+			harvest_plant(plantCoord)
 
 func harvest_plant(key) -> void :
 	var plant = plants.get(key)

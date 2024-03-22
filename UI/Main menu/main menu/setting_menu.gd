@@ -1,14 +1,18 @@
 extends Control
 
 @onready var h_box_container = $VBoxContainer/HBoxContainer
-
+#@export var menu_scene = preload("res://UI/Main menu/main menu/main_menu.gd") as PackedScene
 var screen_mode : String
 
 const WINDOW_MODE_ARRAY : Array[String] = [
 	"Full-Screen",
 	"Window Mode",
 	"Borderless Window",
+	"Sounds"
+	
 ]
+
+
 
 func _ready():
 	var button_index = 0
@@ -24,6 +28,8 @@ func _ready():
 		var callable = Callable(_on_button_down)
 		callable = callable.bind(screen_button)
 		screen_button.button.button_down.connect(callable)
+		#get_window().mode = Window.MODE_MAXIMIZED
+		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
 
 func _on_button_down(button):
 	match button.get_text() :
@@ -32,7 +38,13 @@ func _on_button_down(button):
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 		"Borderless Window":
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
 		"Window Mode":
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		"Sounds":
+			pass
+		#"Back":
+			#get_tree().change_scene_to_packed(menu_scene)
+			
+			

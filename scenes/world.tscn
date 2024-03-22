@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bdtpfxxgt61wi"]
+[gd_scene load_steps=37 format=3 uid="uid://bdtpfxxgt61wi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y5533"]
 [ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p8ojd"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="20_1jcm6"]
 [ext_resource type="Script" path="res://scripts/coins.gd" id="20_3eg12"]
 [ext_resource type="PackedScene" uid="uid://2agvwcsot75r" path="res://scenes/chest.tscn" id="22_0run8"]
+[ext_resource type="PackedScene" uid="uid://dedtkdir1qdpy" path="res://interaction/vending_talking.tscn" id="22_kvjdv"]
 [ext_resource type="PackedScene" uid="uid://bos36urvquqkq" path="res://UI/shop_gui/seed_shop/seed_shop_gui.tscn" id="23_nmq3a"]
 [ext_resource type="PackedScene" uid="uid://ccx8jonejrn2q" path="res://scenes/Goblin.tscn" id="23_tc8xk"]
 [ext_resource type="PackedScene" uid="uid://b4mitotcubsj0" path="res://UI/daynightcycle_ui.tscn" id="23_yhcr7"]
@@ -26,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bnx5uoxq4mgvy" path="res://Colors/daynightcycle-gradient-texture.tres" id="25_vfpyi"]
 [ext_resource type="Script" path="res://scripts/Shop.gd" id="26_k6o1s"]
 [ext_resource type="PackedScene" uid="uid://dhykcev6fajsd" path="res://interaction/Sell_Zone.tscn" id="27_ag4oa"]
+[ext_resource type="Script" path="res://scripts/Sign2.gd" id="29_0m1p4"]
 [ext_resource type="Script" path="res://scripts/EnemySpawner.gd" id="29_h8vwf"]
 [ext_resource type="PackedScene" uid="uid://dl8lnin5t4r0h" path="res://scenes/scene_trigger.tscn" id="30_vlww1"]
 [ext_resource type="AudioStream" uid="uid://oou7ibo385o7" path="res://SFX/cottagecore-17463.mp3" id="30_yjvx4"]
@@ -64,7 +66,7 @@ drag_vertical_enabled = true
 script = ExtResource("3_g7hr8")
 
 [node name="TileMap" parent="." instance=ExtResource("4_u4t28")]
-layer_5/tile_data = PackedInt32Array(917553, 196612, 0, 983085, 589828, 3)
+layer_5/tile_data = PackedInt32Array(917553, 196612, 0, 983085, 589828, 3, 851994, 196612, 0)
 layer_7/name = "Walkpath"
 layer_7/tile_data = PackedInt32Array(786473, 655364, 8, 852009, 589828, 8, 852008, 589828, 10)
 
@@ -134,7 +136,7 @@ position = Vector2(271, 1163)
 [node name="Autumn" type="Node2D" parent="WorldObjects"]
 
 [node name="mark1" type="Marker2D" parent="WorldObjects/Autumn"]
-position = Vector2(1507, 1058)
+position = Vector2(1487, 1059)
 
 [node name="mark2" type="Marker2D" parent="WorldObjects/Autumn"]
 position = Vector2(1629, 913)
@@ -272,7 +274,10 @@ vertical_alignment = 1
 [node name="DayNight" type="CanvasModulate" parent="."]
 script = ExtResource("24_tacxu")
 gradient_texture = ExtResource("25_vfpyi")
-INGAME_SPEED = 40.0
+INGAME_SPEED = 30.0
+
+[node name="VendingTalking" parent="." instance=ExtResource("22_kvjdv")]
+position = Vector2(800, 376)
 
 [node name="Goblin" parent="." instance=ExtResource("23_tc8xk")]
 position = Vector2(720, 184)
@@ -290,6 +295,10 @@ script = ExtResource("26_k6o1s")
 
 [node name="Sign" parent="." instance=ExtResource("31_ckjq3")]
 position = Vector2(466, 36)
+
+[node name="Sign2" parent="." instance=ExtResource("31_ckjq3")]
+position = Vector2(312, 248)
+script = ExtResource("29_0m1p4")
 
 [node name="Monster" type="Node2D" parent="."]
 y_sort_enabled = true

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bbvamngtigwur"]
+
+[ext_resource type="Texture2D" uid="uid://clkvglori2yml" path="res://Monster/Texture/Seedpack/items.png" id="1_cr88j"]
+[ext_resource type="Script" path="res://objects_items/scripts/Item.gd" id="2_ku3fk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05ln2"]
+atlas = ExtResource("1_cr88j")
+region = Rect2(64, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_ku3fk")
+display_name = "Potato"
+icon = SubResource("AtlasTexture_05ln2")
+maxAmountPrStack = 99
+value = 20
+rarity = "Rare"
+description = ""

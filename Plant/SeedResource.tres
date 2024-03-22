@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="SeedResource" load_steps=6 format=3 uid="uid://bl4kjpqaxdj67"]
+[gd_resource type="Resource" script_class="SeedResource" load_steps=8 format=3 uid="uid://bl4kjpqaxdj67"]
 
 [ext_resource type="Script" path="res://Plant/SeedResource.gd" id="1_2n6kl"]
 [ext_resource type="Resource" uid="uid://dmslrgqbad3ye" path="res://Plant/Scene and Data/carbage_scene_data.tres" id="2_c27nu"]
 [ext_resource type="Resource" uid="uid://iikhnkum3ya7" path="res://Plant/Scene and Data/carrot_scene_data.tres" id="3_vb11u"]
 [ext_resource type="Resource" uid="uid://jchlkm75fxnb" path="res://Plant/Scene and Data/corn_scene_data.tres" id="4_0c1b3"]
 [ext_resource type="Resource" uid="uid://c0ydwt3yk662o" path="res://Plant/Scene and Data/tomato_scene_data.tres" id="5_lelxs"]
+[ext_resource type="Resource" uid="uid://coib3r8u5q2ta" path="res://Plant/Scene and Data/egg_plant_scene_data.tres" id="6_r7khk"]
+[ext_resource type="Resource" uid="uid://jcwcvwxxopwe" path="res://Plant/Scene and Data/potato_scene_data.tres" id="7_jx41o"]
 
 [resource]
 script = ExtResource("1_2n6kl")
-seedList = Array[Resource("res://Plant/SeedData.gd")]([ExtResource("2_c27nu"), ExtResource("3_vb11u"), ExtResource("4_0c1b3"), ExtResource("5_lelxs")])
+seedList = Array[Resource("res://Plant/SeedData.gd")]([ExtResource("2_c27nu"), ExtResource("3_vb11u"), ExtResource("4_0c1b3"), ExtResource("5_lelxs"), ExtResource("6_r7khk"), ExtResource("7_jx41o")])

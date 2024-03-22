@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bos36urvquqkq"]
+[gd_scene load_steps=10 format=3 uid="uid://bos36urvquqkq"]
 
 [ext_resource type="Script" path="res://UI/shop_gui/seed_shop/seed_shop_gui.gd" id="1_aowas"]
 [ext_resource type="Texture2D" uid="uid://dswhdn6shx83m" path="res://UI/assets/images/Shop design3.png" id="2_k3cua"]
@@ -7,6 +7,8 @@
 [ext_resource type="Resource" uid="uid://iikhnkum3ya7" path="res://Plant/Scene and Data/carrot_scene_data.tres" id="4_004pj"]
 [ext_resource type="Resource" uid="uid://c0ydwt3yk662o" path="res://Plant/Scene and Data/tomato_scene_data.tres" id="4_w56s1"]
 [ext_resource type="Resource" uid="uid://jchlkm75fxnb" path="res://Plant/Scene and Data/corn_scene_data.tres" id="5_pgv5s"]
+[ext_resource type="Resource" uid="uid://jcwcvwxxopwe" path="res://Plant/Scene and Data/potato_scene_data.tres" id="8_yiens"]
+[ext_resource type="Resource" uid="uid://coib3r8u5q2ta" path="res://Plant/Scene and Data/egg_plant_scene_data.tres" id="9_84whq"]
 
 [node name="SeedShopGUI" type="Control"]
 custom_minimum_size = Vector2(245, 156)
@@ -66,3 +68,11 @@ seedItem = ExtResource("4_004pj")
 [node name="SeedExtractor4" parent="NinePatchRect/MarginContainer/ScrollContainer/StationContainer" instance=ExtResource("2_r1lq0")]
 layout_mode = 2
 seedItem = ExtResource("5_pgv5s")
+
+[node name="SeedExtractor5" parent="NinePatchRect/MarginContainer/ScrollContainer/StationContainer" instance=ExtResource("2_r1lq0")]
+layout_mode = 2
+seedItem = ExtResource("8_yiens")
+
+[node name="SeedExtractor6" parent="NinePatchRect/MarginContainer/ScrollContainer/StationContainer" instance=ExtResource("2_r1lq0")]
+layout_mode = 2
+seedItem = ExtResource("9_84whq")
