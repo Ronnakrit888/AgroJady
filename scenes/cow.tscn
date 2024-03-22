@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://yc8hjtpk4fno"]
+
+[ext_resource type="Script" path="res://scripts/cow.gd" id="1_20ttu"]
+[ext_resource type="Texture2D" uid="uid://c858fevv1jdt5" path="res://SpriteSheets/animals/cow/brown cow sheet.png" id="2_84wn0"]
+[ext_resource type="PackedScene" uid="uid://c1pnyhes6l2pv" path="res://interaction/interaction_area.tscn" id="3_v07c8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpdye"]
+atlas = ExtResource("2_84wn0")
+region = Rect2(0, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbdn2"]
+atlas = ExtResource("2_84wn0")
+region = Rect2(26, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21c34"]
+atlas = ExtResource("2_84wn0")
+region = Rect2(52, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfw6i"]
+atlas = ExtResource("2_84wn0")
+region = Rect2(78, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7glp"]
+atlas = ExtResource("2_84wn0")
+region = Rect2(104, 0, 26, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fexdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpdye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbdn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21c34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfw6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7glp")
+}],
+"loop": true,
+"name": &"dafault",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_arett"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ngf7"]
+radius = 18.1108
+
+[node name="Goblin" type="StaticBody2D"]
+position = Vector2(0, -3)
+script = ExtResource("1_20ttu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fexdr")
+animation = &"dafault"
+frame = 2
+frame_progress = 0.500621
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_arett")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_v07c8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_7ngf7")
+debug_color = Color(0, 0.631373, 0.45098, 0.419608)

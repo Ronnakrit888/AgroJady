@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://UI/Main menu/main menu/main_menu.gd" id="1_ie01d"]
 [ext_resource type="FontFile" uid="uid://b25gpkw4brhr5" path="res://Plant/Fonts/ThaleahFat.ttf" id="2_xfn4q"]
-[ext_resource type="Texture2D" uid="uid://c7tjp30cl4wu0" path="res://SpriteSheets/Play.png" id="3_ne4in"]
-[ext_resource type="Texture2D" uid="uid://b5k2jmswqjxcy" path="res://SpriteSheets/Settings.png" id="4_6vmi8"]
-[ext_resource type="Texture2D" uid="uid://dl6yp3jbuh88c" path="res://SpriteSheets/X.png" id="5_oao3r"]
-[ext_resource type="PackedScene" uid="uid://btxi0q60gcvmf" path="res://UI/Main menu/main menu/bg/mainmenuBG .tscn" id="5_pojds"]
-[ext_resource type="AudioStream" uid="uid://bix31kmpahbo3" path="res://SFX/Click button sound.mp3" id="7_wx6um"]
+[ext_resource type="Texture2D" uid="uid://c3ctkjwj0w5g8" path="res://SpriteSheets/Play.png" id="3_ne4in"]
+[ext_resource type="Texture2D" uid="uid://dydv71fp3xucm" path="res://SpriteSheets/Settings.png" id="4_6vmi8"]
+[ext_resource type="Texture2D" uid="uid://cpbhqtchp7371" path="res://SpriteSheets/X.png" id="5_oao3r"]
+[ext_resource type="PackedScene" path="res://UI/Main menu/main menu/mainmenuBG .tscn" id="5_pojds"]
+[ext_resource type="AudioStream" uid="uid://b0nfxun6cbial" path="res://SFX/DialogSound.mp3" id="7_wx6um"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uckkg"]
 font = ExtResource("2_xfn4q")

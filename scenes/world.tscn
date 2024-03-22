@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bdtpfxxgt61wi"]
+[gd_scene load_steps=38 format=3 uid="uid://bdtpfxxgt61wi"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y5533"]
 [ext_resource type="PackedScene" uid="uid://s8k74qfuj5v5" path="res://scenes/player.tscn" id="2_p8ojd"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://scripts/coins.gd" id="20_3eg12"]
 [ext_resource type="PackedScene" uid="uid://2agvwcsot75r" path="res://scenes/chest.tscn" id="22_0run8"]
 [ext_resource type="PackedScene" uid="uid://dedtkdir1qdpy" path="res://interaction/vending_talking.tscn" id="22_kvjdv"]
+[ext_resource type="PackedScene" uid="uid://yc8hjtpk4fno" path="res://scenes/cow.tscn" id="22_qoqgf"]
 [ext_resource type="PackedScene" uid="uid://bos36urvquqkq" path="res://UI/shop_gui/seed_shop/seed_shop_gui.tscn" id="23_nmq3a"]
 [ext_resource type="PackedScene" uid="uid://ccx8jonejrn2q" path="res://scenes/Goblin.tscn" id="23_tc8xk"]
 [ext_resource type="PackedScene" uid="uid://b4mitotcubsj0" path="res://UI/daynightcycle_ui.tscn" id="23_yhcr7"]
@@ -276,6 +277,9 @@ script = ExtResource("24_tacxu")
 gradient_texture = ExtResource("25_vfpyi")
 INGAME_SPEED = 30.0
 
+[node name="Cow" parent="." instance=ExtResource("22_qoqgf")]
+position = Vector2(864, 296)
+
 [node name="VendingTalking" parent="." instance=ExtResource("22_kvjdv")]
 position = Vector2(800, 376)
 
@@ -333,6 +337,7 @@ position = Vector2(738, 325)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("30_yjvx4")
+volume_db = 20.0
 autoplay = true
 max_distance = 1000.0
 
